@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1084</width>
+    <height>552</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Widget{
+background-color: #1f232a;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="mainContainer" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(111, 111, 111);</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget">
+        <widget class="QWidget" name="calendarPage">
+         <property name="styleSheet">
+          <string notr="true">alternate-background-color: rgb(125, 125, 125);
+color: rgb(255, 255, 255);
+font: 12pt &quot;Segoe UI&quot;;
+border-color: rgb(0, 0, 0);
+selection-color: rgb(0, 0, 0);
+selection-background-color: rgb(180, 180, 180);
+</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QCalendarWidget" name="calendarWidget"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="mapPage">
+         <layout class="QHBoxLayout" name="horizontalLayout_7"/>
+        </widget>
+        <widget class="QWidget" name="homePage">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QWidget" name="widget" native="true"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item alignment="Qt::AlignmentFlag::Qt::AlignmentFlag::AlignBottom">
+    <widget class="QWidget" name="bottomMenuContainer" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item alignment="Qt::AlignmentFlag::Qt::AlignmentFlag::AlignBottom">
+       <widget class="QWidget" name="bottomMenuSubContainer" native="true">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(31, 35, 42);</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="spacing">
+             <number>7</number>
+            </property>
+            <property name="leftMargin">
+             <number>11</number>
+            </property>
+            <property name="topMargin">
+             <number>11</number>
+            </property>
+            <property name="rightMargin">
+             <number>11</number>
+            </property>
+            <property name="bottomMargin">
+             <number>11</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="homeBtn">
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/home_2.png</normaloff>assets/icons/home_2.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="wifiBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/wifi-signal.png</normaloff>assets/icons/wifi-signal.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="musicBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/spotify_2.svg</normaloff>assets/icons/spotify_2.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="acBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/air-conditioning.png</normaloff>assets/icons/air-conditioning.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="bluetoothBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/bluetooth.png</normaloff>assets/icons/bluetooth.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="mapBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/google-maps.png</normaloff>assets/icons/google-maps.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="youtubeBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/youtube.png</normaloff>assets/icons/youtube.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="callBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/phone-call.png</normaloff>assets/icons/phone-call.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="calendarBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/calendar.png</normaloff>assets/icons/calendar.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="updateBtn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/update.png</normaloff>assets/icons/update.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="settings_Btn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>assets/icons/Apple_Settings-512.png</normaloff>assets/icons/Apple_Settings-512.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
