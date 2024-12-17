@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1084</width>
-    <height>552</height>
+    <width>1125</width>
+    <height>610</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,7 +43,18 @@ background-color: #1f232a;
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(111, 111, 111);</string>
+      <string notr="true">QWidget {
+    background-color: rgba(43, 43, 43, 240); /* Dark color with slight transparency */
+    border-radius: 10px; /* Rounded corners for a sleek look */
+}
+
+QLabel {
+    background-color: rgba(0, 0, 0, 100); /* Translucent overlay for content areas */
+    color: white; /* Ensures text is visible */
+    padding: 10px;
+    border-radius: 8px;
+}
+</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <property name="rightMargin">
@@ -77,18 +88,176 @@ selection-background-color: rgb(180, 180, 180);
          <property name="styleSheet">
           <string notr="true"/>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item>
-           <widget class="QWidget" name="widget" native="true"/>
-          </item>
-         </layout>
+         <widget class="QLabel" name="dateTimeLabel">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>-40</y>
+            <width>351</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>11</horstretch>
+            <verstretch>11</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LayoutDirection::RightToLeft</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+        background: linear-gradient(to bottom, #4CAF50, #76c7c0); /* Green gradient */
+        border-radius: 10px;
+        padding: 15px;
+    }</string>
+          </property>
+          <property name="text">
+           <string>text</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="lockBtn">
+          <property name="geometry">
+           <rect>
+            <x>1050</x>
+            <y>10</y>
+            <width>48</width>
+            <height>44</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>assets/icons/lock.png</normaloff>assets/icons/lock.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="seatbeltBtn">
+          <property name="geometry">
+           <rect>
+            <x>1000</x>
+            <y>10</y>
+            <width>48</width>
+            <height>44</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: transparent;  /* Transparent background by default */
+    border: 2px solid transparent;  /* Transparent border to maintain layout */
+    color: black;                   /* Text color */
+    padding: 5px;                   /* Add padding for a better click area */
+    border-radius: 5px;             /* Rounded corners for a modern look */
+    font-size: 14px;                /* Adjust font size for readability */
+}
+
+QPushButton:hover {
+
+	background-color: rgb(58, 120, 127);
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
+    color: black;                   /* Ensure the text color stays consistent */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
+    border-radius: 5px;             /* Maintain rounded corners */
+    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
+    color: black;                   /* Keep text color consistent */
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>assets/icons/safebelt.png</normaloff>assets/icons/safebelt.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QProgressBar" name="progressBar">
+          <property name="geometry">
+           <rect>
+            <x>990</x>
+            <y>70</y>
+            <width>118</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+         <widget class="QWidget" name="horizontalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>100</y>
+            <width>661</width>
+            <height>301</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="homePageLayout"/>
+         </widget>
         </widget>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item alignment="Qt::AlignmentFlag::Qt::AlignmentFlag::AlignBottom">
+   <item>
     <widget class="QWidget" name="bottomMenuContainer" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="leftMargin">
@@ -103,7 +272,7 @@ selection-background-color: rgb(180, 180, 180);
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <item alignment="Qt::AlignmentFlag::Qt::AlignmentFlag::AlignBottom">
+      <item>
        <widget class="QWidget" name="bottomMenuSubContainer" native="true">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(31, 35, 42);</string>
@@ -155,27 +324,26 @@ selection-background-color: rgb(180, 180, 180);
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -198,27 +366,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="wifiBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -241,27 +408,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="musicBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -284,27 +450,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="acBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -327,27 +492,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="bluetoothBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -370,27 +534,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="mapBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -413,27 +576,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="youtubeBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -456,27 +618,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="callBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -499,27 +660,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="calendarBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -542,27 +702,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="updateBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
@@ -585,27 +744,26 @@ QPushButton:pressed {
              <widget class="QPushButton" name="settings_Btn">
               <property name="styleSheet">
                <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: transparent;   /* Transparent background */
+    border: none;                    /* Remove unnecessary border */
+    padding: 8px;                    /* Padding for clickable area */
+    border-radius: 10px;             /* Smooth rounded corners for icons */
+    color: white;                    /* Icon color, use white for contrast */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgba(58, 120, 127, 0.3); /* Semi-transparent hover color */
+    border-radius: 10px;            /* Maintain smooth corners */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: rgba(58, 120, 127, 0.6); /* Darker pressed effect */
+    border-radius: 10px;
+}
+
+QPushButton:disabled {
+    background-color: transparent;  /* No background when disabled */
+    color: #808080;                 /* Greyed-out color for disabled icons */
 }
 </string>
               </property>
