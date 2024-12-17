@@ -67,17 +67,158 @@ QLabel {
        <widget class="QStackedWidget" name="stackedWidget">
         <widget class="QWidget" name="calendarPage">
          <property name="styleSheet">
-          <string notr="true">alternate-background-color: rgb(125, 125, 125);
-color: rgb(255, 255, 255);
-font: 12pt &quot;Segoe UI&quot;;
-border-color: rgb(0, 0, 0);
-selection-color: rgb(0, 0, 0);
-selection-background-color: rgb(180, 180, 180);
-</string>
+          <string notr="true"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
-           <widget class="QCalendarWidget" name="calendarWidget"/>
+           <widget class="QCalendarWidget" name="calendarWidget">
+            <property name="styleSheet">
+             <string notr="true">QCalendarWidget QWidget {
+    alternate-background-color: #2E3B4E; /* Dark gray-blue */
+}
+
+/* Style for top navigation area ###############################################*/ 
+#qt_calendar_navigationbar {
+    background-color: #1F2733; /* Very dark gray */
+    border: 2px solid #3A506B; /* Dark blue-gray */
+    border-bottom: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Style for month change buttons ############################################ */
+#qt_calendar_prevmonth, 
+#qt_calendar_nextmonth {
+    border: none;
+    qproperty-icon: none;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+#qt_calendar_prevmonth {
+    margin-left: 5px;
+    image: url(assets/icons/arrow-119-48.ico);
+}
+
+#qt_calendar_nextmonth {
+    margin-right: 5px;
+    image: url(assets/icons/arrow-19-48.ico);
+}
+
+#qt_calendar_prevmonth:hover, 
+#qt_calendar_nextmonth:hover {
+    background-color: #3A506B; /* Dark blue-gray hover */
+}
+
+#qt_calendar_prevmonth:pressed, 
+#qt_calendar_nextmonth:pressed {
+    background-color: #1C2430; /* Slightly darker */
+}
+
+/* Style for month and year buttons ######################################## */
+#qt_calendar_yearbutton, 
+#qt_calendar_monthbutton {
+    color: #D9E2F1; /* Light gray-blue text */
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 0px 10px;
+    background-color: #2E3B4E;
+}
+
+#qt_calendar_yearbutton:hover, 
+#qt_calendar_monthbutton:hover {
+    background-color: #3A506B; /* Dark blue-gray hover */
+}
+
+#qt_calendar_yearbutton:pressed, 
+#qt_calendar_monthbutton:pressed {
+    background-color: #1C2430;
+}
+
+/* Style for year input lineEdit ######################################*/
+#qt_calendar_yearedit {
+    min-width: 80px;
+    color: #D9E2F1;
+    background: transparent;
+    font-size: 13px;
+}
+
+/* Style for year change buttons ######################################*/
+#qt_calendar_yearedit::up-button {
+	image: url(assets/icons/arrow-151-48.ico);
+    subcontrol-position: right;
+}
+
+#qt_calendar_yearedit::down-button {
+	image: url(assets/icons/arrow-213-48.ico);
+    subcontrol-position: left;
+}
+
+#qt_calendar_yearedit::down-button, 
+#qt_calendar_yearedit::up-button {
+    width: 10px;
+    padding: 0px 5px;
+    border-radius: 3px;
+}
+
+#qt_calendar_yearedit::down-button:hover, 
+#qt_calendar_yearedit::up-button:hover {
+    background-color: #3A506B;
+}
+
+/* Style for month select menu ######################################## */
+#calendarWidget QToolButton QMenu {
+    background-color: #1F2733;
+    color: #D9E2F1;
+}
+
+#calendarWidget QToolButton QMenu::item:selected:enabled {
+    background-color: #3A506B;
+    color: #FFFFFF;
+}
+
+#calendarWidget QToolButton::menu-indicator {
+    nosubcontrol-origin: margin;
+    subcontrol-position: right center;
+    margin-top: 10px;
+    width: 20px;
+}
+
+/* Style for calendar table ########################################## */
+#qt_calendar_calendarview {
+    outline: 0px;
+    border: 2px solid #3A506B;
+    border-top: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #1F2733;
+}
+
+#qt_calendar_calendarview::item {
+    color: #D9E2F1; /* Default item text */
+}
+
+#qt_calendar_calendarview::item:hover {
+    border-radius: 5px;
+    background-color: #3A506B;
+    color: #FFFFFF;
+}
+
+#qt_calendar_calendarview::item:selected {
+    background-color: #55AA7F; /* Greenish accent */
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
