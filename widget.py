@@ -12,9 +12,9 @@ import math
 class DrawingWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.current_speed = 0   # Start speed at 0
+        self.current_speed = 250   # Start speed at 0
         self.max_speed = 250     # Maximum speed on the gauge
-        self.direction = 1       # Controls whether speed is increasing (+1) or decreasing (-1)
+        self.direction = -1       # Controls whether speed is increasing (+1) or decreasing (-1)
 
         # Timer for simulating speed changes
         self.timer = QTimer(self)
@@ -26,6 +26,7 @@ class DrawingWidget(QWidget):
         Simulates speed changes. Increments or decrements the speed value
         based on the direction.
         """
+        print(self.current_speed)
         self.current_speed += self.direction * 2  # Adjust speed increment/decrement rate
         if self.current_speed >= self.max_speed:
             self.direction = -1  # Start decreasing speed
@@ -44,6 +45,7 @@ class DrawingWidget(QWidget):
         center = QPointF(width / 2, height / 2)
 
         # Colors
+
         background_color = QColor("#333333")  # Dark background
         active_arc_color = QColor("#00FF00")  # Bright green active arc
         inactive_arc_color = QColor("#666666")  # Gray inactive arc
@@ -51,24 +53,25 @@ class DrawingWidget(QWidget):
 
         # Arc setup
         arc_rect = QRectF(center.x() - size / 2, center.y() - size / 2, size, size)
-        start_angle = 360 * 16
+        start_angle_inactive_arc = 360 * 16
+        start_angle_active_arc = -90*16
         total_span_angle = 270 * 16  # Total span for the arc
 
         # Draw the inactive arc (background)
         pen_bg = QPen(inactive_arc_color, 15)
         painter.setPen(pen_bg)
-        painter.drawArc(arc_rect, start_angle, total_span_angle)
+        painter.drawArc(arc_rect, start_angle_inactive_arc, total_span_angle)
 
         # Draw the active arc (green) based on current speed
-        speed_span = int((self.current_speed / self.max_speed) * 270) * 16
+        speed_span = int((self.current_speed / self.max_speed) * 270) * -16
         pen_fg = QPen(active_arc_color, 15)
         painter.setPen(pen_fg)
-        painter.drawArc(arc_rect, start_angle, speed_span)
+        painter.drawArc(arc_rect, start_angle_active_arc, speed_span)
 
         # Draw speed text
         painter.setPen(text_color)
         painter.setFont(QFont("Arial", 48, QFont.Bold))
-        speed_text = f"{250-self.current_speed}"
+        speed_text = f"{self.current_speed}"
         text_width = painter.fontMetrics().horizontalAdvance(speed_text)
         painter.drawText(center.x() - text_width / 2, center.y() + 10, speed_text)
 
