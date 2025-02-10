@@ -2,6 +2,8 @@
     "files": [
         "widget.py",
         "form.ui",
-        "calendar.qml"
+        "calendar.qml",
+        "drawing_widget.py",
+        "main.py"
     ]
 }
