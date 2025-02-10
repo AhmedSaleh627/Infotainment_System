@@ -239,7 +239,7 @@ QLabel {
          <widget class="QLabel" name="dateTimeLabel">
           <property name="geometry">
            <rect>
-            <x>400</x>
+            <x>420</x>
             <y>-40</y>
             <width>351</width>
             <height>141</height>
@@ -375,10 +375,10 @@ QPushButton:pressed {
          <widget class="QProgressBar" name="progressBar">
           <property name="geometry">
            <rect>
-            <x>990</x>
+            <x>900</x>
             <y>70</y>
-            <width>118</width>
-            <height>23</height>
+            <width>211</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -391,8 +391,8 @@ QPushButton:pressed {
          <widget class="QWidget" name="horizontalWidget" native="true">
           <property name="geometry">
            <rect>
-            <x>360</x>
-            <y>150</y>
+            <x>390</x>
+            <y>90</y>
             <width>411</width>
             <height>301</height>
            </rect>
@@ -406,302 +406,12 @@ QPushButton:pressed {
            </property>
           </layout>
          </widget>
-         <widget class="QPushButton" name="parkingBtn">
-          <property name="geometry">
-           <rect>
-            <x>940</x>
-            <y>460</y>
-            <width>48</width>
-            <height>44</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: none;                   /* Remove border for a cleaner icon-only look */
-    color: white;                   /* Change to white for better contrast on dark backgrounds */
-    padding: 10px;                  /* Increase padding for better click area */
-    border-radius: 10px;            /* Slightly more rounded corners for consistency */
-    font-size: 20px;                /* Make the icons larger and more prominent */
-}
-
-QPushButton:hover {
-    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */
-    border-radius: 10px;                        /* Ensure rounded corners remain */
-    border: 1px solid #3A787F;                  /* Add a faint hover border */
-    color: white;                               /* Ensure the icon stays visible */
-}
-
-QPushButton:pressed {
-    background-color: rgba(58, 120, 127, 1);    /* Darker teal for pressed effect */
-    border-radius: 10px;                        /* Maintain rounded corners */
-    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */
-    color: white;                               /* Keep the text/icon white */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/p.png</normaloff>assets/icons/p.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="reverseBtn">
-          <property name="geometry">
-           <rect>
-            <x>980</x>
-            <y>460</y>
-            <width>48</width>
-            <height>44</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: none;                   /* Remove border for a cleaner icon-only look */
-    color: white;                   /* Change to white for better contrast on dark backgrounds */
-    padding: 10px;                  /* Increase padding for better click area */
-    border-radius: 10px;            /* Slightly more rounded corners for consistency */
-    font-size: 20px;                /* Make the icons larger and more prominent */
-}
-
-QPushButton:hover {
-    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */
-    border-radius: 10px;                        /* Ensure rounded corners remain */
-    border: 1px solid #3A787F;                  /* Add a faint hover border */
-    color: white;                               /* Ensure the icon stays visible */
-}
-
-QPushButton:pressed {
-    background-color: rgba(58, 120, 127, 1);    /* Darker teal for pressed effect */
-    border-radius: 10px;                        /* Maintain rounded corners */
-    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */
-    color: white;                               /* Keep the text/icon white */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/R.png</normaloff>assets/icons/R.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="neutralBtn">
-          <property name="geometry">
-           <rect>
-            <x>1020</x>
-            <y>460</y>
-            <width>48</width>
-            <height>44</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: none;                   /* Remove border for a cleaner icon-only look */
-    color: white;                   /* Change to white for better contrast on dark backgrounds */
-    padding: 10px;                  /* Increase padding for better click area */
-    border-radius: 10px;            /* Slightly more rounded corners for consistency */
-    font-size: 20px;                /* Make the icons larger and more prominent */
-}
-
-QPushButton:hover {
-    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */
-    border-radius: 10px;                        /* Ensure rounded corners remain */
-    border: 1px solid #3A787F;                  /* Add a faint hover border */
-    color: white;                               /* Ensure the icon stays visible */
-}
-
-QPushButton:pressed {
-    background-color: rgba(58, 120, 127, 1);    /* Darker teal for pressed effect */
-    border-radius: 10px;                        /* Maintain rounded corners */
-    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */
-    color: white;                               /* Keep the text/icon white */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/n.png</normaloff>assets/icons/n.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="driveBtn">
-          <property name="geometry">
-           <rect>
-            <x>1060</x>
-            <y>460</y>
-            <width>48</width>
-            <height>44</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: none;                   /* Remove border for a cleaner icon-only look */
-    color: white;                   /* Change to white for better contrast on dark backgrounds */
-    padding: 10px;                  /* Increase padding for better click area */
-    border-radius: 10px;            /* Slightly more rounded corners for consistency */
-    font-size: 20px;                /* Make the icons larger and more prominent */
-}
-
-QPushButton:hover {
-    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */
-    border-radius: 10px;                        /* Ensure rounded corners remain */
-    border: 1px solid #3A787F;                  /* Add a faint hover border */
-    color: white;                               /* Ensure the icon stays visible */
-}
-
-QPushButton:pressed {
-    background-color: rgba(58, 120, 127, 1);    /* Darker teal for pressed effect */
-    border-radius: 10px;                        /* Maintain rounded corners */
-    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */
-    color: white;                               /* Keep the text/icon white */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/D.png</normaloff>assets/icons/D.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="lightsBtn">
-          <property name="geometry">
-           <rect>
-            <x>27</x>
-            <y>50</y>
-            <width>51</width>
-            <height>51</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
-}
-
-QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
-}
-
-QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/light.png</normaloff>assets/icons/light.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="lightsBtn_2">
-          <property name="geometry">
-           <rect>
-            <x>27</x>
-            <y>130</y>
-            <width>61</width>
-            <height>51</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
-}
-
-QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
-}
-
-QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/wiper.png</normaloff>assets/icons/wiper.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="lightsBtn_3">
+         <widget class="QPushButton" name="car">
           <property name="geometry">
            <rect>
             <x>950</x>
-            <y>210</y>
-            <width>81</width>
+            <y>330</y>
+            <width>111</width>
             <height>141</height>
            </rect>
           </property>
@@ -710,25 +420,15 @@ QPushButton:pressed {
     background-color: transparent;  /* Transparent background by default */
     border: 2px solid transparent;  /* Transparent border to maintain layout */
     color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
+    padding: 2px 5px;               /* Reduced padding for better fit */
     border-radius: 5px;             /* Rounded corners for a modern look */
     font-size: 14px;                /* Adjust font size for readability */
+    min-width: 40px;                /* Ensure button has a minimal width */
+    min-height: 30px;               /* Ensure button has a minimal height */
 }
 
-QPushButton:hover {
 
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
-}
 
-QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
-}
 </string>
           </property>
           <property name="text">
@@ -736,7 +436,7 @@ QPushButton:pressed {
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>assets/icons/car_openall.png</normaloff>assets/icons/car_openall.png</iconset>
+            <normaloff>assets/icons/car_closed.png</normaloff>assets/icons/car_closed.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -745,95 +445,52 @@ QPushButton:pressed {
            </size>
           </property>
          </widget>
-         <widget class="QPushButton" name="lightsBtn_4">
+         <widget class="QPushButton" name="LF">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>210</y>
-            <width>61</width>
-            <height>51</height>
+            <x>900</x>
+            <y>350</y>
+            <width>41</width>
+            <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: none;                   /* Remove border for a cleaner icon-only look */
-    color: white;                   /* Change to white for better contrast on dark backgrounds */
-    padding: 10px;                  /* Increase padding for better click area */
-    border-radius: 10px;            /* Slightly more rounded corners for consistency */
-    font-size: 20px;                /* Make the icons larger and more prominent */
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
 }
 
 QPushButton:hover {
-    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */
-    border-radius: 10px;                        /* Ensure rounded corners remain */
-    border: 1px solid #3A787F;                  /* Add a faint hover border */
-    color: white;                               /* Ensure the icon stays visible */
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
 }
 
 QPushButton:pressed {
-    background-color: rgba(58, 120, 127, 1);    /* Darker teal for pressed effect */
-    border-radius: 10px;                        /* Maintain rounded corners */
-    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */
-    color: white;                               /* Keep the text/icon white */
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
 }
 </string>
           </property>
           <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/car_bacl.png</normaloff>assets/icons/car_bacl.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="reverseBtn_2">
-          <property name="geometry">
-           <rect>
-            <x>910</x>
-            <y>230</y>
-            <width>48</width>
-            <height>44</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
-}
-
-QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
-}
-
-QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/R.png</normaloff>assets/icons/R.png</iconset>
+           <string>LF</string>
           </property>
           <property name="iconSize">
            <size>
@@ -842,47 +499,52 @@ QPushButton:pressed {
            </size>
           </property>
          </widget>
-         <widget class="QPushButton" name="driveBtn_2">
+         <widget class="QPushButton" name="RF">
           <property name="geometry">
            <rect>
-            <x>1020</x>
-            <y>230</y>
-            <width>48</width>
-            <height>44</height>
+            <x>1070</x>
+            <y>350</y>
+            <width>41</width>
+            <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
 }
 </string>
           </property>
           <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/D.png</normaloff>assets/icons/D.png</iconset>
+           <string>RF</string>
           </property>
           <property name="iconSize">
            <size>
@@ -891,47 +553,52 @@ QPushButton:pressed {
            </size>
           </property>
          </widget>
-         <widget class="QPushButton" name="parkingBtn_2">
+         <widget class="QPushButton" name="LB">
           <property name="geometry">
            <rect>
-            <x>910</x>
-            <y>290</y>
-            <width>48</width>
-            <height>44</height>
+            <x>900</x>
+            <y>410</y>
+            <width>41</width>
+            <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
 }
 </string>
           </property>
           <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/p.png</normaloff>assets/icons/p.png</iconset>
+           <string>LB</string>
           </property>
           <property name="iconSize">
            <size>
@@ -940,47 +607,52 @@ QPushButton:pressed {
            </size>
           </property>
          </widget>
-         <widget class="QPushButton" name="neutralBtn_2">
+         <widget class="QPushButton" name="RB">
           <property name="geometry">
            <rect>
-            <x>1020</x>
-            <y>290</y>
-            <width>48</width>
-            <height>44</height>
+            <x>1070</x>
+            <y>410</y>
+            <width>41</width>
+            <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: 2px solid transparent;  /* Transparent border to maintain layout */
-    color: black;                   /* Text color */
-    padding: 5px;                   /* Add padding for a better click area */
-    border-radius: 5px;             /* Rounded corners for a modern look */
-    font-size: 14px;                /* Adjust font size for readability */
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
 }
 
 QPushButton:hover {
-
-	background-color: rgb(58, 120, 127);
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */
-    color: black;                   /* Ensure the text color stays consistent */
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
 }
 
 QPushButton:pressed {
-    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */
-    border-radius: 5px;             /* Maintain rounded corners */
-    border: 1px solid #b0b0b0;      /* Darker border for pressed state */
-    color: black;                   /* Keep text color consistent */
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
 }
 </string>
           </property>
           <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/n.png</normaloff>assets/icons/n.png</iconset>
+           <string>RB</string>
           </property>
           <property name="iconSize">
            <size>
@@ -989,11 +661,11 @@ QPushButton:pressed {
            </size>
           </property>
          </widget>
-         <widget class="QPushButton" name="lightsBtn_5">
+         <widget class="QPushButton" name="power">
           <property name="geometry">
            <rect>
             <x>20</x>
-            <y>210</y>
+            <y>510</y>
             <width>61</width>
             <height>51</height>
            </rect>
@@ -1028,7 +700,7 @@ QPushButton:pressed {
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>assets/icons/car_trunk.png</normaloff>assets/icons/car_trunk.png</iconset>
+            <normaloff>assets/icons/car_shut.png</normaloff>assets/icons/car_shut.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -1037,51 +709,727 @@ QPushButton:pressed {
            </size>
           </property>
          </widget>
-         <widget class="QPushButton" name="lightsBtn_6">
+         <widget class="QTextEdit" name="textEdit">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>440</y>
-            <width>61</width>
-            <height>51</height>
+            <x>20</x>
+            <y>50</y>
+            <width>301</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextEdit {
+    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */
+    border: none;  /* Remove border */
+    border-radius: 15px;  /* Smooth rounded corners */
+    color: white;  /* Text color */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;  /* Better spacing */
+}
+</string>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:18px; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:400; color:#ffffff;&quot;&gt;Notification Alert !!&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:400; color:#ffffff;&quot;&gt;&lt;br /&gt;Ambulance coming on the right clear the way&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="textEdit_2">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>360</y>
+            <width>301</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextEdit {
+    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */
+    border: none;  /* Remove border */
+    border-radius: 15px;  /* Smooth rounded corners */
+    color: white;  /* Text color */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;  /* Better spacing */
+}
+</string>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16px; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:400;&quot;&gt;Send Message: No walahy ya 8aly shof elbnzena ely gya&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="P">
+          <property name="geometry">
+           <rect>
+            <x>900</x>
+            <y>480</y>
+            <width>41</width>
+            <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-    background-color: transparent;  /* Transparent background by default */
-    border: none;                   /* Remove border for a cleaner icon-only look */
-    color: white;                   /* Change to white for better contrast on dark backgrounds */
-    padding: 10px;                  /* Increase padding for better click area */
-    border-radius: 10px;            /* Slightly more rounded corners for consistency */
-    font-size: 20px;                /* Make the icons larger and more prominent */
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
 }
 
 QPushButton:hover {
-    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */
-    border-radius: 10px;                        /* Ensure rounded corners remain */
-    border: 1px solid #3A787F;                  /* Add a faint hover border */
-    color: white;                               /* Ensure the icon stays visible */
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
 }
 
 QPushButton:pressed {
-    background-color: rgba(58, 120, 127, 1);    /* Darker teal for pressed effect */
-    border-radius: 10px;                        /* Maintain rounded corners */
-    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */
-    color: white;                               /* Keep the text/icon white */
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string>P</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="R">
+          <property name="geometry">
+           <rect>
+            <x>960</x>
+            <y>480</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string>R</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="N">
+          <property name="geometry">
+           <rect>
+            <x>1020</x>
+            <y>480</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string>N</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="D">
+          <property name="geometry">
+           <rect>
+            <x>1070</x>
+            <y>480</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string>D</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="trunk">
+          <property name="geometry">
+           <rect>
+            <x>1070</x>
+            <y>260</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
 }
 </string>
           </property>
           <property name="text">
            <string/>
           </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>assets/icons/car_on.png</normaloff>assets/icons/car_on.png</iconset>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="back">
+          <property name="geometry">
+           <rect>
+            <x>900</x>
+            <y>260</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
           </property>
           <property name="iconSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="light">
+          <property name="geometry">
+           <rect>
+            <x>1020</x>
+            <y>260</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="wiper">
+          <property name="geometry">
+           <rect>
+            <x>960</x>
+            <y>260</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="LF_2">
+          <property name="geometry">
+           <rect>
+            <x>900</x>
+            <y>160</y>
+            <width>211</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 15px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Self Parking</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="textEdit_3">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>430</y>
+            <width>331</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextEdit {
+    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */
+    border: none;  /* Remove border */
+    border-radius: 15px;  /* Smooth rounded corners */
+    color: white;  /* Text color */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;  /* Better spacing */
+}
+</string>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16px; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:400;&quot;&gt;Drowsiness Detected !!!&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:400;&quot;&gt;Calling Emergency services after 5 seconds&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="LF_3">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>520</y>
+            <width>121</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 14px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string>I'm Fine</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="textEdit_4">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>220</y>
+            <width>301</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextEdit {
+    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */
+    border: none;  /* Remove border */
+    border-radius: 15px;  /* Smooth rounded corners */
+    color: white;  /* Text color */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;  /* Better spacing */
+}
+</string>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:18px; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:400;&quot;&gt;Incoming Message:&lt;br /&gt;M3aksh 5 gneh fka yzmely&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="LF_4">
+          <property name="geometry">
+           <rect>
+            <x>560</x>
+            <y>520</y>
+            <width>201</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */
+    border: 2px solid transparent;  
+    color: white;  
+    padding: 8px;  /* Increased padding for better look */
+    border-radius: 8px;  
+    font-size: 14px;  
+    font-weight: bold;  /* Make text stand out */
+    text-align: center;
+    letter-spacing: 1px; /* Improve readability */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+QPushButton:hover {
+    background-color: rgb(58, 120, 127);
+    border: 2px solid #d0d0d0;  
+    color: black;  
+    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */
+}
+
+QPushButton:pressed {
+    background-color: #d6d6d6;
+    border: 2px solid #b0b0b0;  
+    color: black;  
+}
+
+QLabel {
+    color: #FFFFFF;  
+    font-size: 16px;  
+    font-weight: bold;  
+    text-align: center;  
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Call Emergency Contact</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
            </size>
           </property>
          </widget>

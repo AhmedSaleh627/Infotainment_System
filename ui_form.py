@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCalendarWidget, QFrame, QHBoxLayout,
     QLabel, QProgressBar, QPushButton, QSizePolicy,
-    QStackedWidget, QVBoxLayout, QWidget)
+    QStackedWidget, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -230,7 +230,7 @@ class Ui_Widget(object):
         self.homePage.setStyleSheet(u"")
         self.dateTimeLabel = QLabel(self.homePage)
         self.dateTimeLabel.setObjectName(u"dateTimeLabel")
-        self.dateTimeLabel.setGeometry(QRect(400, -40, 351, 141))
+        self.dateTimeLabel.setGeometry(QRect(420, -40, 351, 141))
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(11)
         sizePolicy1.setVerticalStretch(11)
@@ -314,51 +314,189 @@ class Ui_Widget(object):
         self.seatbeltBtn.setIconSize(QSize(30, 30))
         self.progressBar = QProgressBar(self.homePage)
         self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setGeometry(QRect(990, 70, 118, 23))
+        self.progressBar.setGeometry(QRect(900, 70, 211, 31))
         self.progressBar.setStyleSheet(u"")
         self.progressBar.setValue(24)
         self.horizontalWidget = QWidget(self.homePage)
         self.horizontalWidget.setObjectName(u"horizontalWidget")
-        self.horizontalWidget.setGeometry(QRect(360, 150, 411, 301))
+        self.horizontalWidget.setGeometry(QRect(390, 90, 411, 301))
         self.horizontalWidget.setStyleSheet(u"background: transparent")
         self.homePageLayout = QHBoxLayout(self.horizontalWidget)
         self.homePageLayout.setSpacing(0)
         self.homePageLayout.setObjectName(u"homePageLayout")
-        self.parkingBtn = QPushButton(self.homePage)
-        self.parkingBtn.setObjectName(u"parkingBtn")
-        self.parkingBtn.setGeometry(QRect(940, 460, 48, 44))
-        self.parkingBtn.setStyleSheet(u"QPushButton {\n"
+        self.car = QPushButton(self.homePage)
+        self.car.setObjectName(u"car")
+        self.car.setGeometry(QRect(950, 330, 111, 141))
+        self.car.setStyleSheet(u"QPushButton {\n"
 "    background-color: transparent;  /* Transparent background by default */\n"
-"    border: none;                   /* Remove border for a cleaner icon-only look */\n"
-"    color: white;                   /* Change to white for better contrast on dark backgrounds */\n"
-"    padding: 10px;                  /* Increase padding for better click area */\n"
-"    border-radius: 10px;            /* Slightly more rounded corners for consistency */\n"
-"    font-size: 20px;                /* Make the icons larger and more prominent */\n"
+"    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
+"    color: black;                   /* Text color */\n"
+"    padding: 2px 5px;               /* Reduced padding for better fit */\n"
+"    border-radius: 5px;             /* Rounded corners for a modern look */\n"
+"    font-size: 14px;                /* Adjust font size for readability */\n"
+"    min-width: 40px;                /* Ensure button has a minimal width */\n"
+"    min-height: 30px;               /* Ensure button has a minimal height */\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        icon2 = QIcon()
+        icon2.addFile(u"assets/icons/car_closed.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.car.setIcon(icon2)
+        self.car.setIconSize(QSize(100, 100))
+        self.LF = QPushButton(self.homePage)
+        self.LF.setObjectName(u"LF")
+        self.LF.setGeometry(QRect(900, 350, 41, 41))
+        self.LF.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */\n"
-"    border-radius: 10px;                        /* Ensure rounded corners remain */\n"
-"    border: 1px solid #3A787F;                  /* Add a faint hover border */\n"
-"    color: white;                               /* Ensure the icon stays visible */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: rgba(58, 120, 127, 1);    /* Darker "
-                        "teal for pressed effect */\n"
-"    border-radius: 10px;                        /* Maintain rounded corners */\n"
-"    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */\n"
-"    color: white;                               /* Keep the text/icon white */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        icon2 = QIcon()
-        icon2.addFile(u"assets/icons/p.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.parkingBtn.setIcon(icon2)
-        self.parkingBtn.setIconSize(QSize(20, 20))
-        self.reverseBtn = QPushButton(self.homePage)
-        self.reverseBtn.setObjectName(u"reverseBtn")
-        self.reverseBtn.setGeometry(QRect(980, 460, 48, 44))
-        self.reverseBtn.setStyleSheet(u"QPushButton {\n"
+        self.LF.setIconSize(QSize(20, 20))
+        self.RF = QPushButton(self.homePage)
+        self.RF.setObjectName(u"RF")
+        self.RF.setGeometry(QRect(1070, 350, 41, 41))
+        self.RF.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
+"}\n"
+"")
+        self.RF.setIconSize(QSize(20, 20))
+        self.LB = QPushButton(self.homePage)
+        self.LB.setObjectName(u"LB")
+        self.LB.setGeometry(QRect(900, 410, 41, 41))
+        self.LB.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
+"}\n"
+"")
+        self.LB.setIconSize(QSize(20, 20))
+        self.RB = QPushButton(self.homePage)
+        self.RB.setObjectName(u"RB")
+        self.RB.setGeometry(QRect(1070, 410, 41, 41))
+        self.RB.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
+"}\n"
+"")
+        self.RB.setIconSize(QSize(20, 20))
+        self.power = QPushButton(self.homePage)
+        self.power.setObjectName(u"power")
+        self.power.setGeometry(QRect(20, 510, 61, 51))
+        self.power.setStyleSheet(u"QPushButton {\n"
 "    background-color: transparent;  /* Transparent background by default */\n"
 "    border: none;                   /* Remove border for a cleaner icon-only look */\n"
 "    color: white;                   /* Change to white for better contrast on dark backgrounds */\n"
@@ -383,380 +521,468 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u"assets/icons/R.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.reverseBtn.setIcon(icon3)
-        self.reverseBtn.setIconSize(QSize(20, 20))
-        self.neutralBtn = QPushButton(self.homePage)
-        self.neutralBtn.setObjectName(u"neutralBtn")
-        self.neutralBtn.setGeometry(QRect(1020, 460, 48, 44))
-        self.neutralBtn.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: none;                   /* Remove border for a cleaner icon-only look */\n"
-"    color: white;                   /* Change to white for better contrast on dark backgrounds */\n"
-"    padding: 10px;                  /* Increase padding for better click area */\n"
-"    border-radius: 10px;            /* Slightly more rounded corners for consistency */\n"
-"    font-size: 20px;                /* Make the icons larger and more prominent */\n"
+        icon3.addFile(u"assets/icons/car_shut.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.power.setIcon(icon3)
+        self.power.setIconSize(QSize(50, 50))
+        self.textEdit = QTextEdit(self.homePage)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setGeometry(QRect(20, 50, 301, 131))
+        self.textEdit.setStyleSheet(u"QTextEdit {\n"
+"    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
+"    border: none;  /* Remove border */\n"
+"    border-radius: 15px;  /* Smooth rounded corners */\n"
+"    color: white;  /* Text color */\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    padding: 10px;  /* Better spacing */\n"
+"}\n"
+"")
+        self.textEdit_2 = QTextEdit(self.homePage)
+        self.textEdit_2.setObjectName(u"textEdit_2")
+        self.textEdit_2.setGeometry(QRect(20, 360, 301, 101))
+        self.textEdit_2.setStyleSheet(u"QTextEdit {\n"
+"    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
+"    border: none;  /* Remove border */\n"
+"    border-radius: 15px;  /* Smooth rounded corners */\n"
+"    color: white;  /* Text color */\n"
+"    font-size: 16px;\n"
+"    font-weight: bold;\n"
+"    padding: 10px;  /* Better spacing */\n"
+"}\n"
+"")
+        self.P = QPushButton(self.homePage)
+        self.P.setObjectName(u"P")
+        self.P.setGeometry(QRect(900, 480, 41, 41))
+        self.P.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */\n"
-"    border-radius: 10px;                        /* Ensure rounded corners remain */\n"
-"    border: 1px solid #3A787F;                  /* Add a faint hover border */\n"
-"    color: white;                               /* Ensure the icon stays visible */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: rgba(58, 120, 127, 1);    /* Darker "
-                        "teal for pressed effect */\n"
-"    border-radius: 10px;                        /* Maintain rounded corners */\n"
-"    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */\n"
-"    color: white;                               /* Keep the text/icon white */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        icon4 = QIcon()
-        icon4.addFile(u"assets/icons/n.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.neutralBtn.setIcon(icon4)
-        self.neutralBtn.setIconSize(QSize(20, 20))
-        self.driveBtn = QPushButton(self.homePage)
-        self.driveBtn.setObjectName(u"driveBtn")
-        self.driveBtn.setGeometry(QRect(1060, 460, 48, 44))
-        self.driveBtn.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: none;                   /* Remove border for a cleaner icon-only look */\n"
-"    color: white;                   /* Change to white for better contrast on dark backgrounds */\n"
-"    padding: 10px;                  /* Increase padding for better click area */\n"
-"    border-radius: 10px;            /* Slightly more rounded corners for consistency */\n"
-"    font-size: 20px;                /* Make the icons larger and more prominent */\n"
+        self.P.setIconSize(QSize(20, 20))
+        self.R = QPushButton(self.homePage)
+        self.R.setObjectName(u"R")
+        self.R.setGeometry(QRect(960, 480, 41, 41))
+        self.R.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */\n"
-"    border-radius: 10px;                        /* Ensure rounded corners remain */\n"
-"    border: 1px solid #3A787F;                  /* Add a faint hover border */\n"
-"    color: white;                               /* Ensure the icon stays visible */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: rgba(58, 120, 127, 1);    /* Darker "
-                        "teal for pressed effect */\n"
-"    border-radius: 10px;                        /* Maintain rounded corners */\n"
-"    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */\n"
-"    color: white;                               /* Keep the text/icon white */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        icon5 = QIcon()
-        icon5.addFile(u"assets/icons/D.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.driveBtn.setIcon(icon5)
-        self.driveBtn.setIconSize(QSize(20, 20))
-        self.lightsBtn = QPushButton(self.homePage)
-        self.lightsBtn.setObjectName(u"lightsBtn")
-        self.lightsBtn.setGeometry(QRect(27, 50, 51, 51))
-        self.lightsBtn.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
-"    color: black;                   /* Text color */\n"
-"    padding: 5px;                   /* Add padding for a better click area */\n"
-"    border-radius: 5px;             /* Rounded corners for a modern look */\n"
-"    font-size: 14px;                /* Adjust font size for readability */\n"
+        self.R.setIconSize(QSize(20, 20))
+        self.N = QPushButton(self.homePage)
+        self.N.setObjectName(u"N")
+        self.N.setGeometry(QRect(1020, 480, 41, 41))
+        self.N.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"\n"
-"	background-color: rgb(58, 120, 127);\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */\n"
-"    color: black;                   /* Ensure the text color stays consistent */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #b0b0b0;  "
-                        "    /* Darker border for pressed state */\n"
-"    color: black;                   /* Keep text color consistent */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        icon6 = QIcon()
-        icon6.addFile(u"assets/icons/light.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.lightsBtn.setIcon(icon6)
-        self.lightsBtn.setIconSize(QSize(50, 50))
-        self.lightsBtn_2 = QPushButton(self.homePage)
-        self.lightsBtn_2.setObjectName(u"lightsBtn_2")
-        self.lightsBtn_2.setGeometry(QRect(27, 130, 61, 51))
-        self.lightsBtn_2.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
-"    color: black;                   /* Text color */\n"
-"    padding: 5px;                   /* Add padding for a better click area */\n"
-"    border-radius: 5px;             /* Rounded corners for a modern look */\n"
-"    font-size: 14px;                /* Adjust font size for readability */\n"
+        self.N.setIconSize(QSize(20, 20))
+        self.D = QPushButton(self.homePage)
+        self.D.setObjectName(u"D")
+        self.D.setGeometry(QRect(1070, 480, 41, 41))
+        self.D.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"\n"
-"	background-color: rgb(58, 120, 127);\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */\n"
-"    color: black;                   /* Ensure the text color stays consistent */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #b0b0b0;  "
-                        "    /* Darker border for pressed state */\n"
-"    color: black;                   /* Keep text color consistent */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        icon7 = QIcon()
-        icon7.addFile(u"assets/icons/wiper.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.lightsBtn_2.setIcon(icon7)
-        self.lightsBtn_2.setIconSize(QSize(50, 50))
-        self.lightsBtn_3 = QPushButton(self.homePage)
-        self.lightsBtn_3.setObjectName(u"lightsBtn_3")
-        self.lightsBtn_3.setGeometry(QRect(950, 210, 81, 141))
-        self.lightsBtn_3.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
-"    color: black;                   /* Text color */\n"
-"    padding: 5px;                   /* Add padding for a better click area */\n"
-"    border-radius: 5px;             /* Rounded corners for a modern look */\n"
-"    font-size: 14px;                /* Adjust font size for readability */\n"
+        self.D.setIconSize(QSize(20, 20))
+        self.trunk = QPushButton(self.homePage)
+        self.trunk.setObjectName(u"trunk")
+        self.trunk.setGeometry(QRect(1070, 260, 41, 41))
+        self.trunk.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"\n"
-"	background-color: rgb(58, 120, 127);\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */\n"
-"    color: black;                   /* Ensure the text color stays consistent */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #b0b0b0;  "
-                        "    /* Darker border for pressed state */\n"
-"    color: black;                   /* Keep text color consistent */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        icon8 = QIcon()
-        icon8.addFile(u"assets/icons/car_openall.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.lightsBtn_3.setIcon(icon8)
-        self.lightsBtn_3.setIconSize(QSize(100, 100))
-        self.lightsBtn_4 = QPushButton(self.homePage)
-        self.lightsBtn_4.setObjectName(u"lightsBtn_4")
-        self.lightsBtn_4.setGeometry(QRect(100, 210, 61, 51))
-        self.lightsBtn_4.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: none;                   /* Remove border for a cleaner icon-only look */\n"
-"    color: white;                   /* Change to white for better contrast on dark backgrounds */\n"
-"    padding: 10px;                  /* Increase padding for better click area */\n"
-"    border-radius: 10px;            /* Slightly more rounded corners for consistency */\n"
-"    font-size: 20px;                /* Make the icons larger and more prominent */\n"
+        self.trunk.setIconSize(QSize(20, 20))
+        self.back = QPushButton(self.homePage)
+        self.back.setObjectName(u"back")
+        self.back.setGeometry(QRect(900, 260, 41, 41))
+        self.back.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */\n"
-"    border-radius: 10px;                        /* Ensure rounded corners remain */\n"
-"    border: 1px solid #3A787F;                  /* Add a faint hover border */\n"
-"    color: white;                               /* Ensure the icon stays visible */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: rgba(58, 120, 127, 1);    /* Darker "
-                        "teal for pressed effect */\n"
-"    border-radius: 10px;                        /* Maintain rounded corners */\n"
-"    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */\n"
-"    color: white;                               /* Keep the text/icon white */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        icon9 = QIcon()
-        icon9.addFile(u"assets/icons/car_bacl.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.lightsBtn_4.setIcon(icon9)
-        self.lightsBtn_4.setIconSize(QSize(50, 50))
-        self.reverseBtn_2 = QPushButton(self.homePage)
-        self.reverseBtn_2.setObjectName(u"reverseBtn_2")
-        self.reverseBtn_2.setGeometry(QRect(910, 230, 48, 44))
-        self.reverseBtn_2.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
-"    color: black;                   /* Text color */\n"
-"    padding: 5px;                   /* Add padding for a better click area */\n"
-"    border-radius: 5px;             /* Rounded corners for a modern look */\n"
-"    font-size: 14px;                /* Adjust font size for readability */\n"
+        self.back.setIconSize(QSize(20, 20))
+        self.light = QPushButton(self.homePage)
+        self.light.setObjectName(u"light")
+        self.light.setGeometry(QRect(1020, 260, 41, 41))
+        self.light.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"\n"
-"	background-color: rgb(58, 120, 127);\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */\n"
-"    color: black;                   /* Ensure the text color stays consistent */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #b0b0b0;  "
-                        "    /* Darker border for pressed state */\n"
-"    color: black;                   /* Keep text color consistent */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        self.reverseBtn_2.setIcon(icon3)
-        self.reverseBtn_2.setIconSize(QSize(20, 20))
-        self.driveBtn_2 = QPushButton(self.homePage)
-        self.driveBtn_2.setObjectName(u"driveBtn_2")
-        self.driveBtn_2.setGeometry(QRect(1020, 230, 48, 44))
-        self.driveBtn_2.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
-"    color: black;                   /* Text color */\n"
-"    padding: 5px;                   /* Add padding for a better click area */\n"
-"    border-radius: 5px;             /* Rounded corners for a modern look */\n"
-"    font-size: 14px;                /* Adjust font size for readability */\n"
+        self.light.setIconSize(QSize(20, 20))
+        self.wiper = QPushButton(self.homePage)
+        self.wiper.setObjectName(u"wiper")
+        self.wiper.setGeometry(QRect(960, 260, 41, 41))
+        self.wiper.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"\n"
-"	background-color: rgb(58, 120, 127);\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */\n"
-"    color: black;                   /* Ensure the text color stays consistent */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #b0b0b0;  "
-                        "    /* Darker border for pressed state */\n"
-"    color: black;                   /* Keep text color consistent */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        self.driveBtn_2.setIcon(icon5)
-        self.driveBtn_2.setIconSize(QSize(20, 20))
-        self.parkingBtn_2 = QPushButton(self.homePage)
-        self.parkingBtn_2.setObjectName(u"parkingBtn_2")
-        self.parkingBtn_2.setGeometry(QRect(910, 290, 48, 44))
-        self.parkingBtn_2.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
-"    color: black;                   /* Text color */\n"
-"    padding: 5px;                   /* Add padding for a better click area */\n"
-"    border-radius: 5px;             /* Rounded corners for a modern look */\n"
-"    font-size: 14px;                /* Adjust font size for readability */\n"
+        self.wiper.setIconSize(QSize(20, 20))
+        self.LF_2 = QPushButton(self.homePage)
+        self.LF_2.setObjectName(u"LF_2")
+        self.LF_2.setGeometry(QRect(900, 160, 211, 51))
+        self.LF_2.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 15px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"\n"
-"	background-color: rgb(58, 120, 127);\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */\n"
-"    color: black;                   /* Ensure the text color stays consistent */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #b0b0b0;  "
-                        "    /* Darker border for pressed state */\n"
-"    color: black;                   /* Keep text color consistent */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        self.parkingBtn_2.setIcon(icon2)
-        self.parkingBtn_2.setIconSize(QSize(20, 20))
-        self.neutralBtn_2 = QPushButton(self.homePage)
-        self.neutralBtn_2.setObjectName(u"neutralBtn_2")
-        self.neutralBtn_2.setGeometry(QRect(1020, 290, 48, 44))
-        self.neutralBtn_2.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
-"    color: black;                   /* Text color */\n"
-"    padding: 5px;                   /* Add padding for a better click area */\n"
-"    border-radius: 5px;             /* Rounded corners for a modern look */\n"
-"    font-size: 14px;                /* Adjust font size for readability */\n"
+        self.LF_2.setIconSize(QSize(20, 20))
+        self.textEdit_3 = QTextEdit(self.homePage)
+        self.textEdit_3.setObjectName(u"textEdit_3")
+        self.textEdit_3.setGeometry(QRect(430, 430, 331, 71))
+        self.textEdit_3.setStyleSheet(u"QTextEdit {\n"
+"    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
+"    border: none;  /* Remove border */\n"
+"    border-radius: 15px;  /* Smooth rounded corners */\n"
+"    color: white;  /* Text color */\n"
+"    font-size: 16px;\n"
+"    font-weight: bold;\n"
+"    padding: 10px;  /* Better spacing */\n"
+"}\n"
+"")
+        self.LF_3 = QPushButton(self.homePage)
+        self.LF_3.setObjectName(u"LF_3")
+        self.LF_3.setGeometry(QRect(430, 520, 121, 41))
+        self.LF_3.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 14px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"\n"
-"	background-color: rgb(58, 120, 127);\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #d0d0d0;      /* Subtle border for hover indication */\n"
-"    color: black;                   /* Ensure the text color stays consistent */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #d6d6d6;      /* Slightly darker gray for pressed effect */\n"
-"    border-radius: 5px;             /* Maintain rounded corners */\n"
-"    border: 1px solid #b0b0b0;  "
-                        "    /* Darker border for pressed state */\n"
-"    color: black;                   /* Keep text color consistent */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        self.neutralBtn_2.setIcon(icon4)
-        self.neutralBtn_2.setIconSize(QSize(20, 20))
-        self.lightsBtn_5 = QPushButton(self.homePage)
-        self.lightsBtn_5.setObjectName(u"lightsBtn_5")
-        self.lightsBtn_5.setGeometry(QRect(20, 210, 61, 51))
-        self.lightsBtn_5.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: none;                   /* Remove border for a cleaner icon-only look */\n"
-"    color: white;                   /* Change to white for better contrast on dark backgrounds */\n"
-"    padding: 10px;                  /* Increase padding for better click area */\n"
-"    border-radius: 10px;            /* Slightly more rounded corners for consistency */\n"
-"    font-size: 20px;                /* Make the icons larger and more prominent */\n"
+        self.LF_3.setIconSize(QSize(20, 20))
+        self.textEdit_4 = QTextEdit(self.homePage)
+        self.textEdit_4.setObjectName(u"textEdit_4")
+        self.textEdit_4.setGeometry(QRect(20, 220, 301, 101))
+        self.textEdit_4.setStyleSheet(u"QTextEdit {\n"
+"    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
+"    border: none;  /* Remove border */\n"
+"    border-radius: 15px;  /* Smooth rounded corners */\n"
+"    color: white;  /* Text color */\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    padding: 10px;  /* Better spacing */\n"
+"}\n"
+"")
+        self.LF_4 = QPushButton(self.homePage)
+        self.LF_4.setObjectName(u"LF_4")
+        self.LF_4.setGeometry(QRect(560, 520, 201, 41))
+        self.LF_4.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 14px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */\n"
-"    border-radius: 10px;                        /* Ensure rounded corners remain */\n"
-"    border: 1px solid #3A787F;                  /* Add a faint hover border */\n"
-"    color: white;                               /* Ensure the icon stays visible */\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: rgba(58, 120, 127, 1);    /* Darker "
-                        "teal for pressed effect */\n"
-"    border-radius: 10px;                        /* Maintain rounded corners */\n"
-"    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */\n"
-"    color: white;                               /* Keep the text/icon white */\n"
-"}\n"
-"")
-        icon10 = QIcon()
-        icon10.addFile(u"assets/icons/car_trunk.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.lightsBtn_5.setIcon(icon10)
-        self.lightsBtn_5.setIconSize(QSize(50, 50))
-        self.lightsBtn_6 = QPushButton(self.homePage)
-        self.lightsBtn_6.setObjectName(u"lightsBtn_6")
-        self.lightsBtn_6.setGeometry(QRect(30, 440, 61, 51))
-        self.lightsBtn_6.setStyleSheet(u"QPushButton {\n"
-"    background-color: transparent;  /* Transparent background by default */\n"
-"    border: none;                   /* Remove border for a cleaner icon-only look */\n"
-"    color: white;                   /* Change to white for better contrast on dark backgrounds */\n"
-"    padding: 10px;                  /* Increase padding for better click area */\n"
-"    border-radius: 10px;            /* Slightly more rounded corners for consistency */\n"
-"    font-size: 20px;                /* Make the icons larger and more prominent */\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
 "}\n"
 "\n"
-"QPushButton:hover {\n"
-"    background-color: rgba(58, 120, 127, 0.6);  /* Subtle teal hover effect */\n"
-"    border-radius: 10px;                        /* Ensure rounded corners remain */\n"
-"    border: 1px solid #3A787F;                  /* Add a faint hover border */\n"
-"    color: white;                               /* Ensure the icon stays visible */\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgba(58, 120, 127, 1);    /* Darker "
-                        "teal for pressed effect */\n"
-"    border-radius: 10px;                        /* Maintain rounded corners */\n"
-"    border: 1px solid #2A5A5F;                  /* Slightly darker border on press */\n"
-"    color: white;                               /* Keep the text/icon white */\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
 "}\n"
 "")
-        icon11 = QIcon()
-        icon11.addFile(u"assets/icons/car_on.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.lightsBtn_6.setIcon(icon11)
-        self.lightsBtn_6.setIconSize(QSize(50, 50))
+        self.LF_4.setIconSize(QSize(20, 20))
         self.stackedWidget.addWidget(self.homePage)
 
         self.horizontalLayout_4.addWidget(self.stackedWidget)
@@ -810,9 +1036,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon12 = QIcon()
-        icon12.addFile(u"assets/icons/home_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.homeBtn.setIcon(icon12)
+        icon4 = QIcon()
+        icon4.addFile(u"assets/icons/home_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.homeBtn.setIcon(icon4)
         self.homeBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.homeBtn)
@@ -842,9 +1068,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon13 = QIcon()
-        icon13.addFile(u"assets/icons/wifi-signal.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.wifiBtn.setIcon(icon13)
+        icon5 = QIcon()
+        icon5.addFile(u"assets/icons/wifi-signal.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.wifiBtn.setIcon(icon5)
         self.wifiBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.wifiBtn)
@@ -874,9 +1100,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon14 = QIcon()
-        icon14.addFile(u"assets/icons/spotify_2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.musicBtn.setIcon(icon14)
+        icon6 = QIcon()
+        icon6.addFile(u"assets/icons/spotify_2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.musicBtn.setIcon(icon6)
         self.musicBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.musicBtn)
@@ -906,9 +1132,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon15 = QIcon()
-        icon15.addFile(u"assets/icons/air-conditioning.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.acBtn.setIcon(icon15)
+        icon7 = QIcon()
+        icon7.addFile(u"assets/icons/air-conditioning.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.acBtn.setIcon(icon7)
         self.acBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.acBtn)
@@ -938,9 +1164,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon16 = QIcon()
-        icon16.addFile(u"assets/icons/bluetooth.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bluetoothBtn.setIcon(icon16)
+        icon8 = QIcon()
+        icon8.addFile(u"assets/icons/bluetooth.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bluetoothBtn.setIcon(icon8)
         self.bluetoothBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.bluetoothBtn)
@@ -970,9 +1196,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon17 = QIcon()
-        icon17.addFile(u"assets/icons/google-maps.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.mapBtn.setIcon(icon17)
+        icon9 = QIcon()
+        icon9.addFile(u"assets/icons/google-maps.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.mapBtn.setIcon(icon9)
         self.mapBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.mapBtn)
@@ -1002,9 +1228,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon18 = QIcon()
-        icon18.addFile(u"assets/icons/youtube.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.youtubeBtn.setIcon(icon18)
+        icon10 = QIcon()
+        icon10.addFile(u"assets/icons/youtube.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.youtubeBtn.setIcon(icon10)
         self.youtubeBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.youtubeBtn)
@@ -1034,9 +1260,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon19 = QIcon()
-        icon19.addFile(u"assets/icons/phone-call.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.callBtn.setIcon(icon19)
+        icon11 = QIcon()
+        icon11.addFile(u"assets/icons/phone-call.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.callBtn.setIcon(icon11)
         self.callBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.callBtn)
@@ -1066,9 +1292,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon20 = QIcon()
-        icon20.addFile(u"assets/icons/calendar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.calendarBtn.setIcon(icon20)
+        icon12 = QIcon()
+        icon12.addFile(u"assets/icons/calendar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.calendarBtn.setIcon(icon12)
         self.calendarBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.calendarBtn)
@@ -1098,9 +1324,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon21 = QIcon()
-        icon21.addFile(u"assets/icons/update.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.updateBtn.setIcon(icon21)
+        icon13 = QIcon()
+        icon13.addFile(u"assets/icons/update.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.updateBtn.setIcon(icon13)
         self.updateBtn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.updateBtn)
@@ -1130,9 +1356,9 @@ class Ui_Widget(object):
 "    color: #808080;                 /* Greyed-out color for disabled icons */\n"
 "}\n"
 "")
-        icon22 = QIcon()
-        icon22.addFile(u"assets/icons/Apple_Settings-512.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.settings_Btn.setIcon(icon22)
+        icon14 = QIcon()
+        icon14.addFile(u"assets/icons/Apple_Settings-512.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.settings_Btn.setIcon(icon14)
         self.settings_Btn.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_3.addWidget(self.settings_Btn)
@@ -1157,20 +1383,57 @@ class Ui_Widget(object):
         self.dateTimeLabel.setText(QCoreApplication.translate("Widget", u"text", None))
         self.lockBtn.setText("")
         self.seatbeltBtn.setText("")
-        self.parkingBtn.setText("")
-        self.reverseBtn.setText("")
-        self.neutralBtn.setText("")
-        self.driveBtn.setText("")
-        self.lightsBtn.setText("")
-        self.lightsBtn_2.setText("")
-        self.lightsBtn_3.setText("")
-        self.lightsBtn_4.setText("")
-        self.reverseBtn_2.setText("")
-        self.driveBtn_2.setText("")
-        self.parkingBtn_2.setText("")
-        self.neutralBtn_2.setText("")
-        self.lightsBtn_5.setText("")
-        self.lightsBtn_6.setText("")
+        self.car.setText("")
+        self.LF.setText(QCoreApplication.translate("Widget", u"LF", None))
+        self.RF.setText(QCoreApplication.translate("Widget", u"RF", None))
+        self.LB.setText(QCoreApplication.translate("Widget", u"LB", None))
+        self.RB.setText(QCoreApplication.translate("Widget", u"RB", None))
+        self.power.setText("")
+        self.textEdit.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:18px; font-weight:700; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\">Notification Alert !!</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\"><br />Ambulance coming on the right clear the way</span></p></body></html>", None))
+        self.textEdit_2.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:16px; font-weight:700; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400;\">Send Message: No walahy ya 8aly shof elbnzena ely gya</span></p></body></html>", None))
+        self.P.setText(QCoreApplication.translate("Widget", u"P", None))
+        self.R.setText(QCoreApplication.translate("Widget", u"R", None))
+        self.N.setText(QCoreApplication.translate("Widget", u"N", None))
+        self.D.setText(QCoreApplication.translate("Widget", u"D", None))
+        self.trunk.setText("")
+        self.back.setText("")
+        self.light.setText("")
+        self.wiper.setText("")
+        self.LF_2.setText(QCoreApplication.translate("Widget", u"Self Parking", None))
+        self.textEdit_3.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:16px; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400;\">Drowsiness Detected !!!</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400;\">Calling Emergency services after 5 seconds</span></p></body></html>", None))
+        self.LF_3.setText(QCoreApplication.translate("Widget", u"I'm Fine", None))
+        self.textEdit_4.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:18px; font-weight:700; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400;\">Incoming Message:<br />M3aksh 5 gneh fka yzmely</span></p></body></html>", None))
+        self.LF_4.setText(QCoreApplication.translate("Widget", u"Call Emergency Contact", None))
         self.homeBtn.setText("")
         self.wifiBtn.setText("")
         self.musicBtn.setText("")
