@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 14.0.2, 2025-02-10T11:38:25. -->
+<!-- Written by QtCreator 14.0.2, 2025-02-11T19:48:48. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -172,7 +172,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">drawing_widget.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/QT/Projects/InfotainmentSystem/drawing_widget.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/QT/Projects/InfotainmentSystem/drawing_widget.py</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\QT\Projects\InfotainmentSystem\drawing_widget.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
@@ -191,7 +191,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">main.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/QT/Projects/InfotainmentSystem/main.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/QT/Projects/InfotainmentSystem/main.py</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\QT\Projects\InfotainmentSystem\main.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

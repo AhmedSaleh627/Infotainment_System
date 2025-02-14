@@ -1,7 +1,10 @@
 import sys
 import io
 import folium
-from PySide6.QtWidgets import QApplication, QWidget, QLabel, QSizePolicy, QGraphicsPixmapItem, QGraphicsScene, QVBoxLayout, QTextEdit
+import platform
+import subprocess
+
+from PySide6.QtWidgets import QApplication, QWidget, QLabel, QSizePolicy, QGraphicsPixmapItem, QGraphicsScene, QVBoxLayout, QTextEdit, QMessageBox
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtGui import QIcon, QPixmap, QPainter, QColor, QPen, QFont
 from PySide6.QtCore import QTimer, QDateTime, Qt, QRectF, QPointF, QSize, QPropertyAnimation
@@ -27,10 +30,11 @@ class Widget(QWidget):
         self.ui.power.clicked.connect(self.toggle_power)
         self.ui.homeBtn.clicked.connect(self.show_home_page)
         self.ui.calendarBtn.clicked.connect(self.show_calendar_page)
+        self.ui.wifiBtn.clicked.connect(self.show_wifi_page)
         self.ui.mapBtn.clicked.connect(self.show_map_page)
         self.ui.lockBtn.clicked.connect(self.toggle_lock)
         self.ui.seatbeltBtn.clicked.connect(self.toggle_seatbelt)
-
+        self.ui.refreshButton.clicked.connect(self.scan_wifi)
         self.ui.car.setIcon(self.colorize_icon('assets/icons/all_closed.png', QColor("#FF0000")))
         self.ui.car.setIconSize(QSize(130, 130))
         self.ui.RF.clicked.connect(self.toggle_RF)
@@ -45,7 +49,7 @@ class Widget(QWidget):
         self.ui.light.setIconSize(QSize(30, 30))
         self.ui.wiper.setIcon(self.colorize_icon('assets/icons/wiper.png', QColor("#FFFFFF")))
         self.ui.wiper.setIconSize(QSize(30, 30))
-
+        self.scan_wifi()
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_date_time)
         self.timer.start(1000)
@@ -60,7 +64,44 @@ class Widget(QWidget):
 
         # Store the reference to the DrawingWidget here, so it persists between page transitions
         self.current_drawing_widget = None
+    def scan_wifi(self):
+        """Scans for available Wi-Fi networks and updates the list widget."""
+        self.ui.wifiListWidget.clear()
+        wifi_list = self.get_wifi_networks()
 
+        if wifi_list:
+            self.ui.wifiListWidget.addItems(wifi_list)
+        else:
+            self.ui.wifiListWidget.addItem("No networks found!")
+
+    def get_wifi_networks(self):
+        """Retrieve available Wi-Fi networks based on OS."""
+        wifi_networks = []
+        os_name = platform.system()
+
+        try:
+            if os_name == "Windows":
+                output = subprocess.check_output(["netsh", "wlan", "show", "networks"], encoding="utf-8")
+                wifi_networks = self.parse_windows_output(output)
+            elif os_name == "Linux":
+                output = subprocess.check_output(["nmcli", "-t", "-f", "SSID", "dev", "wifi"], encoding="utf-8")
+                wifi_networks = output.strip().split("\n")
+            else:
+                wifi_networks.append("Unsupported OS")
+        except Exception as e:
+            wifi_networks.append(f"Error: {str(e)}")
+
+        return wifi_networks
+
+    def parse_windows_output(self, output):
+        """Extract SSID names from Windows netsh output."""
+        wifi_networks = []
+        for line in output.split("\n"):
+            if "SSID" in line:
+                ssid = line.split(":")[-1].strip()
+                if ssid:
+                    wifi_networks.append(ssid)
+        return wifi_networks
 
     def simulate_progress(self):
         """
@@ -231,10 +272,13 @@ class Widget(QWidget):
             self.current_drawing_widget = DrawingWidget(self)
             self.ui.homePageLayout.addWidget(self.current_drawing_widget)
 
-        self.ui.stackedWidget.setCurrentIndex(2)  # Set homePage as active
+        self.ui.stackedWidget.setCurrentIndex(3)  # Set homePage as active
 
     def show_calendar_page(self):
         self.ui.stackedWidget.setCurrentIndex(0)  # Set calendar page as active
+
+    def show_wifi_page(self):
+        self.ui.stackedWidget.setCurrentIndex(1)  # Set calendar page as active
 
     def show_map_page(self):
         if not self.map_initialized:
@@ -251,5 +295,5 @@ class Widget(QWidget):
             self.web_view.setGeometry(self.ui.mapPage.rect())
             self.ui.mapPage.layout().addWidget(self.web_view)
             self.map_initialized = True
-        self.ui.stackedWidget.setCurrentIndex(1)
+        self.ui.stackedWidget.setCurrentIndex(2)
 

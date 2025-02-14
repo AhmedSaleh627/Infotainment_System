@@ -16,8 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCalendarWidget, QFrame, QHBoxLayout,
-    QLabel, QProgressBar, QPushButton, QSizePolicy,
-    QStackedWidget, QTextEdit, QVBoxLayout, QWidget)
+    QLabel, QListWidget, QListWidgetItem, QProgressBar,
+    QPushButton, QSizePolicy, QStackedWidget, QTextEdit,
+    QVBoxLayout, QWidget)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -220,6 +221,120 @@ class Ui_Widget(object):
         self.horizontalLayout_6.addWidget(self.calendarWidget)
 
         self.stackedWidget.addWidget(self.calendarPage)
+        self.wifiPage = QWidget()
+        self.wifiPage.setObjectName(u"wifiPage")
+        self.wifiLabel = QLabel(self.wifiPage)
+        self.wifiLabel.setObjectName(u"wifiLabel")
+        self.wifiLabel.setGeometry(QRect(150, 10, 851, 61))
+        self.wifiLabel.setStyleSheet(u"QLabel {\n"
+"    background-color: #2b2b2b;\n"
+"    color: #ffffff;\n"
+"    font-size: 30px;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
+"    border-radius: 8px;\n"
+"border: 2px solid #555;\n"
+"    text-align: center;\n"
+"    qproperty-alignment: AlignCenter;\n"
+"}\n"
+"")
+        self.wifiListWidget = QListWidget(self.wifiPage)
+        self.wifiListWidget.setObjectName(u"wifiListWidget")
+        self.wifiListWidget.setGeometry(QRect(150, 70, 851, 511))
+        self.wifiListWidget.setStyleSheet(u"QListWidget {\n"
+"    background-color: #2b2b2b;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 10px;\n"
+"    padding: 5px;\n"
+"    color: #ddd;\n"
+"    font-size: 20px;\n"
+"    selection-background-color: #0078D7;\n"
+"    selection-color: white;\n"
+"}\n"
+"QListWidget::item {\n"
+"    padding: 10px;\n"
+"    border-bottom: 1px solid #444;\n"
+"}\n"
+"QListWidget::item:selected {\n"
+"    background-color: #0078D7;\n"
+"    color: white;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"")
+        self.refreshButton = QPushButton(self.wifiPage)
+        self.refreshButton.setObjectName(u"refreshButton")
+        self.refreshButton.setGeometry(QRect(150, 540, 181, 41))
+        self.refreshButton.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 18px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
+"}\n"
+"")
+        self.connectButton = QPushButton(self.wifiPage)
+        self.connectButton.setObjectName(u"connectButton")
+        self.connectButton.setGeometry(QRect(820, 540, 181, 41))
+        self.connectButton.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 18px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
+"}\n"
+"")
+        self.stackedWidget.addWidget(self.wifiPage)
         self.mapPage = QWidget()
         self.mapPage.setObjectName(u"mapPage")
         self.horizontalLayout_7 = QHBoxLayout(self.mapPage)
@@ -1380,6 +1495,9 @@ class Ui_Widget(object):
 
     def retranslateUi(self, Widget):
         Widget.setWindowTitle(QCoreApplication.translate("Widget", u"Widget", None))
+        self.wifiLabel.setText(QCoreApplication.translate("Widget", u"Available Wifi Networks", None))
+        self.refreshButton.setText(QCoreApplication.translate("Widget", u"Refresh", None))
+        self.connectButton.setText(QCoreApplication.translate("Widget", u"Connect", None))
         self.dateTimeLabel.setText(QCoreApplication.translate("Widget", u"text", None))
         self.lockBtn.setText("")
         self.seatbeltBtn.setText("")
