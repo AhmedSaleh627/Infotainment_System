@@ -1,7 +1,7 @@
 # Infotainment System + V2X Integration
 
 ## Overview
-This infotainment system is designed for smart vehicles, integrating V2X communication, real-time driver monitoring, and various connectivity features. Built using PySide6 and deployed on a Raspberry Pi 5, the system offers a user-friendly interface with essential functionalities to enhance driver awareness and convenience.
+This infotainment system is designed for smart vehicles, integrating V2X communication, real-time driver monitoring, and various connectivity features. Built using PySide6 and deployed on a Raspberry Pi, the system offers a user-friendly interface with essential functionalities to enhance driver awareness and convenience.
 
 ## Features
 ### User Interface
@@ -31,7 +31,7 @@ This infotainment system is designed for smart vehicles, integrating V2X communi
 ## Implementation Details
 ### Technologies Used
 - **Programming Language**: Python (PySide6 for UI)
-- **Hardware**: Raspberry Pi 5, Raspberry Pi Camera, LCD Touch Screen, GPS
+- **Hardware**: Raspberry Pi, Raspberry Pi Camera, LCD Touch Screen, GPS
 - **Networking**: MQTT, ESP-NOW, WI-FI and Bluetooth modules
 - **Mapping Service**: OpenStreetMap
 
@@ -49,7 +49,7 @@ This infotainment system is designed for smart vehicles, integrating V2X communi
 To set up the system on Raspberry Pi 5:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/infotainment-system.git
+   git clone https://github.com/AhmedSaleh627/Infotainment_System
    ```
 2. Install dependencies:
    ```bash
