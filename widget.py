@@ -318,14 +318,21 @@ class Widget(QWidget):
         self.ui.stackedWidget.setCurrentIndex(1)  # Set homePage as active
 
     def show_calendar_page(self):
-        self.ui.stackedWidget.setCurrentIndex(3)  # Set calendar page as active
+        self.ui.stackedWidget.setCurrentIndex(4)  # Set calendar page as active
 
     def show_fota_page(self):
-        self.ui.stackedWidget.setCurrentIndex(4)  # Set calendar page as active
+        self.ui.stackedWidget.setCurrentIndex(5)  # Set calendar page as active
 
     def show_wifi_page(self):
         self.ui.stackedWidget.setCurrentIndex(0)  # Set calendar page as active
 
+    def show_youtube_page(self):
+        """Shows the YouTube page with embedded web view."""
+        if not hasattr(self, 'youtube_initialized') or not self.youtube_initialized:
+            self.initialize_youtube_view()
+        self.ui.stackedWidget.setCurrentWidget(self.ui.youtubePage)
+        self.ui.stackedWidget.setCurrentIndex(2)
+        
     def show_map_page(self):
         if not self.map_initialized:
             folium_map = folium.Map(location=[31.257196646654524, 29.98070623246377], zoom_start=30)
@@ -341,13 +348,9 @@ class Widget(QWidget):
             self.web_view.setGeometry(self.ui.mapPage.rect())
             self.ui.mapPage.layout().addWidget(self.web_view)
             self.map_initialized = True
-        self.ui.stackedWidget.setCurrentIndex(2)
+        self.ui.stackedWidget.setCurrentIndex(3)
 
-    def show_youtube_page(self):
-        """Shows the YouTube page with embedded web view."""
-        if not hasattr(self, 'youtube_initialized') or not self.youtube_initialized:
-            self.initialize_youtube_view()
-        self.ui.stackedWidget.setCurrentWidget(self.ui.youtubePage)
+
     
     def initialize_youtube_view(self):
         """Initializes the YouTube web view once."""
