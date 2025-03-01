@@ -63,164 +63,6 @@ class Ui_Widget(object):
         self.horizontalLayout_4.setContentsMargins(-1, -1, 0, 0)
         self.stackedWidget = QStackedWidget(self.mainContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.calendarPage = QWidget()
-        self.calendarPage.setObjectName(u"calendarPage")
-        self.calendarPage.setStyleSheet(u"")
-        self.horizontalLayout_6 = QHBoxLayout(self.calendarPage)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.calendarWidget = QCalendarWidget(self.calendarPage)
-        self.calendarWidget.setObjectName(u"calendarWidget")
-        self.calendarWidget.setStyleSheet(u"QCalendarWidget QWidget {\n"
-"    alternate-background-color: #2E3B4E; /* Dark gray-blue */\n"
-"}\n"
-"\n"
-"/* Style for top navigation area ###############################################*/ \n"
-"#qt_calendar_navigationbar {\n"
-"    background-color: #1F2733; /* Very dark gray */\n"
-"    border: 2px solid #3A506B; /* Dark blue-gray */\n"
-"    border-bottom: 0px;\n"
-"    border-top-left-radius: 5px;\n"
-"    border-top-right-radius: 5px;\n"
-"}\n"
-"\n"
-"/* Style for month change buttons ############################################ */\n"
-"#qt_calendar_prevmonth, \n"
-"#qt_calendar_nextmonth {\n"
-"    border: none;\n"
-"    qproperty-icon: none;\n"
-"    min-width: 13px;\n"
-"    max-width: 13px;\n"
-"    min-height: 13px;\n"
-"    max-height: 13px;\n"
-"\n"
-"    border-radius: 5px;\n"
-"    background-color: transparent;\n"
-"    padding: 5px;\n"
-"}\n"
-"\n"
-"#qt_calendar_prevmonth {\n"
-"    margin-left: 5px;\n"
-"    image: url(assets/icons/arrow-119-48.ico);\n"
-"}\n"
-"\n"
-"#qt_calendar_nextmonth {\n"
-"    margin-right: 5px;"
-                        "\n"
-"    image: url(assets/icons/arrow-19-48.ico);\n"
-"}\n"
-"\n"
-"#qt_calendar_prevmonth:hover, \n"
-"#qt_calendar_nextmonth:hover {\n"
-"    background-color: #3A506B; /* Dark blue-gray hover */\n"
-"}\n"
-"\n"
-"#qt_calendar_prevmonth:pressed, \n"
-"#qt_calendar_nextmonth:pressed {\n"
-"    background-color: #1C2430; /* Slightly darker */\n"
-"}\n"
-"\n"
-"/* Style for month and year buttons ######################################## */\n"
-"#qt_calendar_yearbutton, \n"
-"#qt_calendar_monthbutton {\n"
-"    color: #D9E2F1; /* Light gray-blue text */\n"
-"    margin: 5px;\n"
-"    border-radius: 5px;\n"
-"    font-size: 13px;\n"
-"    padding: 0px 10px;\n"
-"    background-color: #2E3B4E;\n"
-"}\n"
-"\n"
-"#qt_calendar_yearbutton:hover, \n"
-"#qt_calendar_monthbutton:hover {\n"
-"    background-color: #3A506B; /* Dark blue-gray hover */\n"
-"}\n"
-"\n"
-"#qt_calendar_yearbutton:pressed, \n"
-"#qt_calendar_monthbutton:pressed {\n"
-"    background-color: #1C2430;\n"
-"}\n"
-"\n"
-"/* Style for year input lineEdit #############################"
-                        "#########*/\n"
-"#qt_calendar_yearedit {\n"
-"    min-width: 80px;\n"
-"    color: #D9E2F1;\n"
-"    background: transparent;\n"
-"    font-size: 13px;\n"
-"}\n"
-"\n"
-"/* Style for year change buttons ######################################*/\n"
-"#qt_calendar_yearedit::up-button {\n"
-"	image: url(assets/icons/arrow-151-48.ico);\n"
-"    subcontrol-position: right;\n"
-"}\n"
-"\n"
-"#qt_calendar_yearedit::down-button {\n"
-"	image: url(assets/icons/arrow-213-48.ico);\n"
-"    subcontrol-position: left;\n"
-"}\n"
-"\n"
-"#qt_calendar_yearedit::down-button, \n"
-"#qt_calendar_yearedit::up-button {\n"
-"    width: 10px;\n"
-"    padding: 0px 5px;\n"
-"    border-radius: 3px;\n"
-"}\n"
-"\n"
-"#qt_calendar_yearedit::down-button:hover, \n"
-"#qt_calendar_yearedit::up-button:hover {\n"
-"    background-color: #3A506B;\n"
-"}\n"
-"\n"
-"/* Style for month select menu ######################################## */\n"
-"#calendarWidget QToolButton QMenu {\n"
-"    background-color: #1F2733;\n"
-"    color: #D9E2F1;\n"
-"}\n"
-"\n"
-"#calendarWidget QToolBu"
-                        "tton QMenu::item:selected:enabled {\n"
-"    background-color: #3A506B;\n"
-"    color: #FFFFFF;\n"
-"}\n"
-"\n"
-"#calendarWidget QToolButton::menu-indicator {\n"
-"    nosubcontrol-origin: margin;\n"
-"    subcontrol-position: right center;\n"
-"    margin-top: 10px;\n"
-"    width: 20px;\n"
-"}\n"
-"\n"
-"/* Style for calendar table ########################################## */\n"
-"#qt_calendar_calendarview {\n"
-"    outline: 0px;\n"
-"    border: 2px solid #3A506B;\n"
-"    border-top: 0px;\n"
-"    border-bottom-left-radius: 5px;\n"
-"    border-bottom-right-radius: 5px;\n"
-"    background-color: #1F2733;\n"
-"}\n"
-"\n"
-"#qt_calendar_calendarview::item {\n"
-"    color: #D9E2F1; /* Default item text */\n"
-"}\n"
-"\n"
-"#qt_calendar_calendarview::item:hover {\n"
-"    border-radius: 5px;\n"
-"    background-color: #3A506B;\n"
-"    color: #FFFFFF;\n"
-"}\n"
-"\n"
-"#qt_calendar_calendarview::item:selected {\n"
-"    background-color: #55AA7F; /* Greenish accent */\n"
-"    color: #FFFFFF;\n"
-"    border-radius: 5px;\n"
-"}\n"
-"")
-
-        self.horizontalLayout_6.addWidget(self.calendarWidget)
-
-        self.stackedWidget.addWidget(self.calendarPage)
         self.wifiPage = QWidget()
         self.wifiPage.setObjectName(u"wifiPage")
         self.wifiLabel = QLabel(self.wifiPage)
@@ -335,11 +177,6 @@ class Ui_Widget(object):
 "}\n"
 "")
         self.stackedWidget.addWidget(self.wifiPage)
-        self.mapPage = QWidget()
-        self.mapPage.setObjectName(u"mapPage")
-        self.horizontalLayout_7 = QHBoxLayout(self.mapPage)
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.stackedWidget.addWidget(self.mapPage)
         self.homePage = QWidget()
         self.homePage.setObjectName(u"homePage")
         self.homePage.setStyleSheet(u"")
@@ -641,26 +478,13 @@ class Ui_Widget(object):
         self.power.setIconSize(QSize(50, 50))
         self.textEdit = QTextEdit(self.homePage)
         self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(20, 50, 301, 131))
+        self.textEdit.setGeometry(QRect(10, 80, 351, 131))
         self.textEdit.setStyleSheet(u"QTextEdit {\n"
 "    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
 "    border: none;  /* Remove border */\n"
 "    border-radius: 15px;  /* Smooth rounded corners */\n"
 "    color: white;  /* Text color */\n"
 "    font-size: 18px;\n"
-"    font-weight: bold;\n"
-"    padding: 10px;  /* Better spacing */\n"
-"}\n"
-"")
-        self.textEdit_2 = QTextEdit(self.homePage)
-        self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setGeometry(QRect(20, 360, 301, 101))
-        self.textEdit_2.setStyleSheet(u"QTextEdit {\n"
-"    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
-"    border: none;  /* Remove border */\n"
-"    border-radius: 15px;  /* Smooth rounded corners */\n"
-"    color: white;  /* Text color */\n"
-"    font-size: 16px;\n"
 "    font-weight: bold;\n"
 "    padding: 10px;  /* Better spacing */\n"
 "}\n"
@@ -1050,7 +874,7 @@ class Ui_Widget(object):
         self.LF_3.setIconSize(QSize(20, 20))
         self.textEdit_4 = QTextEdit(self.homePage)
         self.textEdit_4.setObjectName(u"textEdit_4")
-        self.textEdit_4.setGeometry(QRect(20, 220, 301, 101))
+        self.textEdit_4.setGeometry(QRect(10, 260, 351, 211))
         self.textEdit_4.setStyleSheet(u"QTextEdit {\n"
 "    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
 "    border: none;  /* Remove border */\n"
@@ -1099,6 +923,308 @@ class Ui_Widget(object):
 "")
         self.LF_4.setIconSize(QSize(20, 20))
         self.stackedWidget.addWidget(self.homePage)
+        self.mapPage = QWidget()
+        self.mapPage.setObjectName(u"mapPage")
+        self.horizontalLayout_7 = QHBoxLayout(self.mapPage)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.stackedWidget.addWidget(self.mapPage)
+        self.calendarPage = QWidget()
+        self.calendarPage.setObjectName(u"calendarPage")
+        self.calendarPage.setStyleSheet(u"")
+        self.horizontalLayout_6 = QHBoxLayout(self.calendarPage)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.calendarWidget = QCalendarWidget(self.calendarPage)
+        self.calendarWidget.setObjectName(u"calendarWidget")
+        self.calendarWidget.setStyleSheet(u"QCalendarWidget QWidget {\n"
+"    alternate-background-color: #2E3B4E; /* Dark gray-blue */\n"
+"}\n"
+"\n"
+"/* Style for top navigation area ###############################################*/ \n"
+"#qt_calendar_navigationbar {\n"
+"    background-color: #1F2733; /* Very dark gray */\n"
+"    border: 2px solid #3A506B; /* Dark blue-gray */\n"
+"    border-bottom: 0px;\n"
+"    border-top-left-radius: 5px;\n"
+"    border-top-right-radius: 5px;\n"
+"}\n"
+"\n"
+"/* Style for month change buttons ############################################ */\n"
+"#qt_calendar_prevmonth, \n"
+"#qt_calendar_nextmonth {\n"
+"    border: none;\n"
+"    qproperty-icon: none;\n"
+"    min-width: 13px;\n"
+"    max-width: 13px;\n"
+"    min-height: 13px;\n"
+"    max-height: 13px;\n"
+"\n"
+"    border-radius: 5px;\n"
+"    background-color: transparent;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"#qt_calendar_prevmonth {\n"
+"    margin-left: 5px;\n"
+"    image: url(assets/icons/arrow-119-48.ico);\n"
+"}\n"
+"\n"
+"#qt_calendar_nextmonth {\n"
+"    margin-right: 5px;"
+                        "\n"
+"    image: url(assets/icons/arrow-19-48.ico);\n"
+"}\n"
+"\n"
+"#qt_calendar_prevmonth:hover, \n"
+"#qt_calendar_nextmonth:hover {\n"
+"    background-color: #3A506B; /* Dark blue-gray hover */\n"
+"}\n"
+"\n"
+"#qt_calendar_prevmonth:pressed, \n"
+"#qt_calendar_nextmonth:pressed {\n"
+"    background-color: #1C2430; /* Slightly darker */\n"
+"}\n"
+"\n"
+"/* Style for month and year buttons ######################################## */\n"
+"#qt_calendar_yearbutton, \n"
+"#qt_calendar_monthbutton {\n"
+"    color: #D9E2F1; /* Light gray-blue text */\n"
+"    margin: 5px;\n"
+"    border-radius: 5px;\n"
+"    font-size: 13px;\n"
+"    padding: 0px 10px;\n"
+"    background-color: #2E3B4E;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearbutton:hover, \n"
+"#qt_calendar_monthbutton:hover {\n"
+"    background-color: #3A506B; /* Dark blue-gray hover */\n"
+"}\n"
+"\n"
+"#qt_calendar_yearbutton:pressed, \n"
+"#qt_calendar_monthbutton:pressed {\n"
+"    background-color: #1C2430;\n"
+"}\n"
+"\n"
+"/* Style for year input lineEdit #############################"
+                        "#########*/\n"
+"#qt_calendar_yearedit {\n"
+"    min-width: 80px;\n"
+"    color: #D9E2F1;\n"
+"    background: transparent;\n"
+"    font-size: 13px;\n"
+"}\n"
+"\n"
+"/* Style for year change buttons ######################################*/\n"
+"#qt_calendar_yearedit::up-button {\n"
+"	image: url(assets/icons/arrow-151-48.ico);\n"
+"    subcontrol-position: right;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearedit::down-button {\n"
+"	image: url(assets/icons/arrow-213-48.ico);\n"
+"    subcontrol-position: left;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearedit::down-button, \n"
+"#qt_calendar_yearedit::up-button {\n"
+"    width: 10px;\n"
+"    padding: 0px 5px;\n"
+"    border-radius: 3px;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearedit::down-button:hover, \n"
+"#qt_calendar_yearedit::up-button:hover {\n"
+"    background-color: #3A506B;\n"
+"}\n"
+"\n"
+"/* Style for month select menu ######################################## */\n"
+"#calendarWidget QToolButton QMenu {\n"
+"    background-color: #1F2733;\n"
+"    color: #D9E2F1;\n"
+"}\n"
+"\n"
+"#calendarWidget QToolBu"
+                        "tton QMenu::item:selected:enabled {\n"
+"    background-color: #3A506B;\n"
+"    color: #FFFFFF;\n"
+"}\n"
+"\n"
+"#calendarWidget QToolButton::menu-indicator {\n"
+"    nosubcontrol-origin: margin;\n"
+"    subcontrol-position: right center;\n"
+"    margin-top: 10px;\n"
+"    width: 20px;\n"
+"}\n"
+"\n"
+"/* Style for calendar table ########################################## */\n"
+"#qt_calendar_calendarview {\n"
+"    outline: 0px;\n"
+"    border: 2px solid #3A506B;\n"
+"    border-top: 0px;\n"
+"    border-bottom-left-radius: 5px;\n"
+"    border-bottom-right-radius: 5px;\n"
+"    background-color: #1F2733;\n"
+"}\n"
+"\n"
+"#qt_calendar_calendarview::item {\n"
+"    color: #D9E2F1; /* Default item text */\n"
+"}\n"
+"\n"
+"#qt_calendar_calendarview::item:hover {\n"
+"    border-radius: 5px;\n"
+"    background-color: #3A506B;\n"
+"    color: #FFFFFF;\n"
+"}\n"
+"\n"
+"#qt_calendar_calendarview::item:selected {\n"
+"    background-color: #55AA7F; /* Greenish accent */\n"
+"    color: #FFFFFF;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"")
+
+        self.horizontalLayout_6.addWidget(self.calendarWidget)
+
+        self.stackedWidget.addWidget(self.calendarPage)
+        self.fotaPage = QWidget()
+        self.fotaPage.setObjectName(u"fotaPage")
+        self.label = QLabel(self.fotaPage)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(0, 0, 361, 81))
+        self.label.setStyleSheet(u"QLabel {\n"
+"    color: white;\n"
+"    font-size: 26px;\n"
+"    font-weight: bold;\n"
+"    background-color: transparent;\n"
+"    padding: 5px;\n"
+"    border: none;\n"
+"    letter-spacing: 0.5px;\n"
+"}\n"
+"")
+        self.label_2 = QLabel(self.fotaPage)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(0, 60, 361, 81))
+        self.label_2.setStyleSheet(u"QLabel {\n"
+"    color: white;\n"
+"    font-size: 20px;\n"
+"    font-weight: bold;\n"
+"    background-color: transparent;\n"
+"    padding: 5px;\n"
+"    border: none;\n"
+"    letter-spacing: 0.5px;\n"
+"}\n"
+"")
+        self.check_updates_btn = QPushButton(self.fotaPage)
+        self.check_updates_btn.setObjectName(u"check_updates_btn")
+        self.check_updates_btn.setGeometry(QRect(40, 490, 281, 61))
+        self.check_updates_btn.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 14px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
+"}\n"
+"")
+        self.release_notes_text = QTextEdit(self.fotaPage)
+        self.release_notes_text.setObjectName(u"release_notes_text")
+        self.release_notes_text.setGeometry(QRect(570, 70, 471, 251))
+        self.release_notes_text.setStyleSheet(u"\n"
+"    QTextEdit {\n"
+"        background-color: #1a1a1a;  /* Darker background for better contrast */\n"
+"        border: 2px solid #333;  /* Subtle border */\n"
+"        border-radius: 12px;  /* Rounded corners */\n"
+"        padding: 10px;  /* Inner spacing */\n"
+"        color: #f0f0f0;  /* Light text for readability */\n"
+"        font-size: 14px;\n"
+"        font-weight: bold;\n"
+"    }\n"
+"\n"
+"    QTextEdit:focus {\n"
+"        border: 2px solid #0078D7;  /* Highlight when focused */\n"
+"    }\n"
+"\n"
+"")
+        self.update_now_btn = QPushButton(self.fotaPage)
+        self.update_now_btn.setObjectName(u"update_now_btn")
+        self.update_now_btn.setGeometry(QRect(820, 490, 281, 61))
+        self.update_now_btn.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
+"    border: 2px solid transparent;  \n"
+"    color: white;  \n"
+"    padding: 8px;  /* Increased padding for better look */\n"
+"    border-radius: 8px;  \n"
+"    font-size: 14px;  \n"
+"    font-weight: bold;  /* Make text stand out */\n"
+"    text-align: center;\n"
+"    letter-spacing: 1px; /* Improve readability */\n"
+"    transition: all 0.3s ease-in-out; /* Smooth transitions */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(58, 120, 127);\n"
+"    border: 2px solid #d0d0d0;  \n"
+"    color: black;  \n"
+"    box-shadow: 0px 0px 10px rgba(58, 120, 127, 0.7); /* Glow effect */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d6d6d6;\n"
+"    border: 2px solid #b0b0b0;  \n"
+"    color: black;  \n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #FFFFFF;  \n"
+"    font-size: 16px;  \n"
+"    font-weight: bold;  \n"
+"    text-align: center;  \n"
+"}\n"
+"")
+        self.status_text = QTextEdit(self.fotaPage)
+        self.status_text.setObjectName(u"status_text")
+        self.status_text.setGeometry(QRect(20, 220, 361, 181))
+        self.status_text.setStyleSheet(u"\n"
+"    QTextEdit {\n"
+"        background-color: #1a1a1a;  /* Darker background for better contrast */\n"
+"        border: 2px solid #333;  /* Subtle border */\n"
+"        border-radius: 12px;  /* Rounded corners */\n"
+"        padding: 10px;  /* Inner spacing */\n"
+"        color: #f0f0f0;  /* Light text for readability */\n"
+"        font-size: 14px;\n"
+"        font-weight: bold;\n"
+"    }\n"
+"\n"
+"    QTextEdit:focus {\n"
+"        border: 2px solid #0078D7;  /* Highlight when focused */\n"
+"    }\n"
+"\n"
+"")
+        self.stackedWidget.addWidget(self.fotaPage)
 
         self.horizontalLayout_4.addWidget(self.stackedWidget)
 
@@ -1414,9 +1540,9 @@ class Ui_Widget(object):
 
         self.horizontalLayout_3.addWidget(self.calendarBtn)
 
-        self.updateBtn = QPushButton(self.frame)
-        self.updateBtn.setObjectName(u"updateBtn")
-        self.updateBtn.setStyleSheet(u"QPushButton {\n"
+        self.fotaBtn = QPushButton(self.frame)
+        self.fotaBtn.setObjectName(u"fotaBtn")
+        self.fotaBtn.setStyleSheet(u"QPushButton {\n"
 "    background-color: transparent;   /* Transparent background */\n"
 "    border: none;                    /* Remove unnecessary border */\n"
 "    padding: 8px;                    /* Padding for clickable area */\n"
@@ -1441,10 +1567,10 @@ class Ui_Widget(object):
 "")
         icon13 = QIcon()
         icon13.addFile(u"assets/icons/update.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.updateBtn.setIcon(icon13)
-        self.updateBtn.setIconSize(QSize(40, 40))
+        self.fotaBtn.setIcon(icon13)
+        self.fotaBtn.setIconSize(QSize(40, 40))
 
-        self.horizontalLayout_3.addWidget(self.updateBtn)
+        self.horizontalLayout_3.addWidget(self.fotaBtn)
 
         self.settings_Btn = QPushButton(self.frame)
         self.settings_Btn.setObjectName(u"settings_Btn")
@@ -1514,16 +1640,8 @@ class Ui_Widget(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:18px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\">Notification Alert !!</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400; color:#ffffff;\"><br />Ambulance coming on the right clear the way</span></p></body></html>", None))
-        self.textEdit_2.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:16px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400;\">Send Message: No walahy ya 8aly shof elbnzena ely gya</span></p></body></html>", None))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#ffffff;\">Notification Alert !!</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#ffffff;\"><br />Ambulance coming on the right clear the way</span></p></body></html>", None))
         self.P.setText(QCoreApplication.translate("Widget", u"P", None))
         self.R.setText(QCoreApplication.translate("Widget", u"R", None))
         self.N.setText(QCoreApplication.translate("Widget", u"N", None))
@@ -1550,8 +1668,42 @@ class Ui_Widget(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:18px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400;\">Incoming Message:<br />M3aksh 5 gneh fka yzmely</span></p></body></html>", None))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Caution: A vehicle is approaching from your left. </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-si"
+                        "ze:10pt;\">Distance: 20 meters<br />Speed: 60 MPH<br />Direction: Left Side</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Auto Dismiss in 5 seconds</span></p></body></html>", None))
         self.LF_4.setText(QCoreApplication.translate("Widget", u"Call Emergency Contact", None))
+        self.label.setText(QCoreApplication.translate("Widget", u"Infotainment Software", None))
+        self.label_2.setText(QCoreApplication.translate("Widget", u"Current Software Version: \"v1.0.0\"", None))
+        self.check_updates_btn.setText(QCoreApplication.translate("Widget", u"Check For Updates", None))
+        self.release_notes_text.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:14px; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18px;\">Update Information</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:18px;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
+                        ";\"><br /></p></body></html>", None))
+        self.update_now_btn.setText(QCoreApplication.translate("Widget", u"Update Now", None))
+        self.status_text.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:14px; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt;\">Update Status</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span sty"
+                        "le=\" font-size:11pt;\">- Last update: 20/02/2025</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt;\">- Check for updates every two weeks to be updated</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;\"><br /></p></body></html>", None))
         self.homeBtn.setText("")
         self.wifiBtn.setText("")
         self.musicBtn.setText("")
@@ -1561,7 +1713,7 @@ class Ui_Widget(object):
         self.youtubeBtn.setText("")
         self.callBtn.setText("")
         self.calendarBtn.setText("")
-        self.updateBtn.setText("")
+        self.fotaBtn.setText("")
         self.settings_Btn.setText("")
     # retranslateUi
 

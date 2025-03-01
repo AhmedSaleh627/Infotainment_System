@@ -10,13 +10,27 @@ from PySide6.QtGui import QIcon, QPixmap, QPainter, QColor, QPen, QFont
 from PySide6.QtCore import QTimer, QDateTime, Qt, QRectF, QPointF, QSize, QPropertyAnimation
 
 from drawing_widget import DrawingWidget
+from update_checker import UpdateChecker
 from ui_form import Ui_Widget
+
+
+
 
 class Widget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.initialize_system()
+
+
+
+    def initialize_system(self):
+
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
+
+        self.update_checker = UpdateChecker()
+        self.ui.check_updates_btn.clicked.connect(self.check_for_updates)
+        self.ui.update_now_btn.clicked.connect(self.update_now)
 
         self.web_view = None
         self.map_initialized = False
@@ -29,6 +43,7 @@ class Widget(QWidget):
         self.is_powered=False
         self.ui.power.clicked.connect(self.toggle_power)
         self.ui.homeBtn.clicked.connect(self.show_home_page)
+        self.ui.fotaBtn.clicked.connect(self.show_fota_page)
         self.ui.calendarBtn.clicked.connect(self.show_calendar_page)
         self.ui.wifiBtn.clicked.connect(self.show_wifi_page)
         self.ui.mapBtn.clicked.connect(self.show_map_page)
@@ -63,7 +78,32 @@ class Widget(QWidget):
         self.update_progress_style(self.progress_value)
 
         # Store the reference to the DrawingWidget here, so it persists between page transitions
-        self.current_drawing_widget = None
+        self.current_drawing_widget = None 
+
+
+    def check_for_updates(self):
+        # Check for updates
+        update_available = self.update_checker.check_updates()
+
+        # Get the update status message
+        status_message = self.update_checker.get_update_status()
+
+        release_notes=self.update_checker.get_release_notes()
+
+        # Update the QTextEdit or QLabel with the status message
+        self.ui.status_text.setText(status_message)  # Assuming you have a QTextEdit named updateStatusText
+        self.ui.release_notes_text.setText(release_notes)
+
+    def update_now(self):
+        update_available = self.update_checker.check_updates()
+
+        apply_update = self.update_checker.apply_updates()
+
+        self.ui.release_notes_text.setText(apply_update)
+
+
+
+
     def scan_wifi(self):
         """Scans for available Wi-Fi networks and updates the list widget."""
         self.ui.wifiListWidget.clear()
@@ -272,13 +312,16 @@ class Widget(QWidget):
             self.current_drawing_widget = DrawingWidget(self)
             self.ui.homePageLayout.addWidget(self.current_drawing_widget)
 
-        self.ui.stackedWidget.setCurrentIndex(3)  # Set homePage as active
+        self.ui.stackedWidget.setCurrentIndex(1)  # Set homePage as active
 
     def show_calendar_page(self):
-        self.ui.stackedWidget.setCurrentIndex(0)  # Set calendar page as active
+        self.ui.stackedWidget.setCurrentIndex(3)  # Set calendar page as active
+
+    def show_fota_page(self):
+        self.ui.stackedWidget.setCurrentIndex(4)  # Set calendar page as active
 
     def show_wifi_page(self):
-        self.ui.stackedWidget.setCurrentIndex(1)  # Set calendar page as active
+        self.ui.stackedWidget.setCurrentIndex(0)  # Set calendar page as active
 
     def show_map_page(self):
         if not self.map_initialized:

@@ -4,6 +4,7 @@
         "form.ui",
         "calendar.qml",
         "drawing_widget.py",
-        "main.py"
+        "main.py",
+        "update_checker.py"
     ]
 }
