@@ -7,7 +7,7 @@ import subprocess
 from PySide6.QtWidgets import QApplication, QWidget, QLabel, QSizePolicy, QGraphicsPixmapItem, QGraphicsScene, QVBoxLayout, QTextEdit, QMessageBox
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtGui import QIcon, QPixmap, QPainter, QColor, QPen, QFont
-from PySide6.QtCore import QTimer, QDateTime, Qt, QRectF, QPointF, QSize, QPropertyAnimation
+from PySide6.QtCore import QTimer, QDateTime, Qt, QRectF, QPointF, QSize, QPropertyAnimation, QUrl
 
 from drawing_widget import DrawingWidget
 from update_checker import UpdateChecker
@@ -79,6 +79,9 @@ class Widget(QWidget):
 
         # Store the reference to the DrawingWidget here, so it persists between page transitions
         self.current_drawing_widget = None 
+        
+        self.ui.youtubeBtn.clicked.connect(self.show_youtube_page)
+
 
 
     def check_for_updates(self):
@@ -339,4 +342,23 @@ class Widget(QWidget):
             self.ui.mapPage.layout().addWidget(self.web_view)
             self.map_initialized = True
         self.ui.stackedWidget.setCurrentIndex(2)
+
+    def show_youtube_page(self):
+        """Shows the YouTube page with embedded web view."""
+        if not hasattr(self, 'youtube_initialized') or not self.youtube_initialized:
+            self.initialize_youtube_view()
+        self.ui.stackedWidget.setCurrentWidget(self.ui.youtubePage)
+    
+    def initialize_youtube_view(self):
+        """Initializes the YouTube web view once."""
+        self.youtube_view = QWebEngineView()
+        self.youtube_view.setUrl(QUrl("https://www.youtube.com"))
+        
+        # Set up layout if not exists
+        if self.ui.youtubePage.layout() is None:
+            layout = QVBoxLayout(self.ui.youtubePage)
+            layout.setContentsMargins(0, 0, 0, 0)
+        
+        self.ui.youtubePage.layout().addWidget(self.youtube_view)
+        self.youtube_initialized = True
 

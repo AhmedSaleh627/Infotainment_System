@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'form.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.6.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -188,13 +188,12 @@ class Ui_Widget(object):
         sizePolicy1.setVerticalStretch(11)
         sizePolicy1.setHeightForWidth(self.dateTimeLabel.sizePolicy().hasHeightForWidth())
         self.dateTimeLabel.setSizePolicy(sizePolicy1)
-        self.dateTimeLabel.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
+        self.dateTimeLabel.setLayoutDirection(Qt.LeftToRight)
         self.dateTimeLabel.setStyleSheet(u"QLabel {\n"
 "        background: linear-gradient(to bottom, #4CAF50, #76c7c0); /* Green gradient */\n"
 "        border-radius: 10px;\n"
 "        padding: 15px;\n"
 "    }")
-        self.dateTimeLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.lockBtn = QPushButton(self.homePage)
         self.lockBtn.setObjectName(u"lockBtn")
         self.lockBtn.setGeometry(QRect(1050, 10, 48, 44))
@@ -229,7 +228,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u"assets/icons/lock.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"assets/icons/lock.png", QSize(), QIcon.Normal, QIcon.Off)
         self.lockBtn.setIcon(icon)
         self.lockBtn.setIconSize(QSize(30, 30))
         self.seatbeltBtn = QPushButton(self.homePage)
@@ -261,7 +260,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u"assets/icons/safebelt.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"assets/icons/safebelt.png", QSize(), QIcon.Normal, QIcon.Off)
         self.seatbeltBtn.setIcon(icon1)
         self.seatbeltBtn.setIconSize(QSize(30, 30))
         self.progressBar = QProgressBar(self.homePage)
@@ -294,7 +293,7 @@ class Ui_Widget(object):
 "\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u"assets/icons/car_closed.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"assets/icons/car_closed.png", QSize(), QIcon.Normal, QIcon.Off)
         self.car.setIcon(icon2)
         self.car.setIconSize(QSize(100, 100))
         self.LF = QPushButton(self.homePage)
@@ -473,7 +472,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u"assets/icons/car_shut.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"assets/icons/car_shut.png", QSize(), QIcon.Normal, QIcon.Off)
         self.power.setIcon(icon3)
         self.power.setIconSize(QSize(50, 50))
         self.textEdit = QTextEdit(self.homePage)
@@ -923,6 +922,15 @@ class Ui_Widget(object):
 "")
         self.LF_4.setIconSize(QSize(20, 20))
         self.stackedWidget.addWidget(self.homePage)
+        self.youtubePage = QWidget()
+        self.youtubePage.setObjectName(u"youtubePage")
+        self.verticalLayoutWidget = QWidget(self.youtubePage)
+        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
+        self.verticalLayoutWidget.setGeometry(QRect(19, 19, 1091, 551))
+        self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.stackedWidget.addWidget(self.youtubePage)
         self.mapPage = QWidget()
         self.mapPage.setObjectName(u"mapPage")
         self.horizontalLayout_7 = QHBoxLayout(self.mapPage)
@@ -1245,8 +1253,7 @@ class Ui_Widget(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.frame = QFrame(self.bottomMenuSubContainer)
         self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.frame.setFrameShape(QFrame.NoFrame)
         self.horizontalLayout_3 = QHBoxLayout(self.frame)
         self.horizontalLayout_3.setSpacing(7)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -1278,7 +1285,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u"assets/icons/home_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"assets/icons/home_2.png", QSize(), QIcon.Normal, QIcon.Off)
         self.homeBtn.setIcon(icon4)
         self.homeBtn.setIconSize(QSize(40, 40))
 
@@ -1310,7 +1317,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon5 = QIcon()
-        icon5.addFile(u"assets/icons/wifi-signal.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"assets/icons/wifi-signal.png", QSize(), QIcon.Normal, QIcon.Off)
         self.wifiBtn.setIcon(icon5)
         self.wifiBtn.setIconSize(QSize(40, 40))
 
@@ -1342,7 +1349,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon6 = QIcon()
-        icon6.addFile(u"assets/icons/spotify_2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon6.addFile(u"assets/icons/spotify_2.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.musicBtn.setIcon(icon6)
         self.musicBtn.setIconSize(QSize(40, 40))
 
@@ -1374,7 +1381,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon7 = QIcon()
-        icon7.addFile(u"assets/icons/air-conditioning.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon7.addFile(u"assets/icons/air-conditioning.png", QSize(), QIcon.Normal, QIcon.Off)
         self.acBtn.setIcon(icon7)
         self.acBtn.setIconSize(QSize(40, 40))
 
@@ -1406,7 +1413,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon8 = QIcon()
-        icon8.addFile(u"assets/icons/bluetooth.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon8.addFile(u"assets/icons/bluetooth.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bluetoothBtn.setIcon(icon8)
         self.bluetoothBtn.setIconSize(QSize(40, 40))
 
@@ -1438,7 +1445,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon9 = QIcon()
-        icon9.addFile(u"assets/icons/google-maps.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon9.addFile(u"assets/icons/google-maps.png", QSize(), QIcon.Normal, QIcon.Off)
         self.mapBtn.setIcon(icon9)
         self.mapBtn.setIconSize(QSize(40, 40))
 
@@ -1470,7 +1477,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon10 = QIcon()
-        icon10.addFile(u"assets/icons/youtube.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon10.addFile(u"assets/icons/youtube.png", QSize(), QIcon.Normal, QIcon.Off)
         self.youtubeBtn.setIcon(icon10)
         self.youtubeBtn.setIconSize(QSize(40, 40))
 
@@ -1502,7 +1509,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon11 = QIcon()
-        icon11.addFile(u"assets/icons/phone-call.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon11.addFile(u"assets/icons/phone-call.png", QSize(), QIcon.Normal, QIcon.Off)
         self.callBtn.setIcon(icon11)
         self.callBtn.setIconSize(QSize(40, 40))
 
@@ -1534,7 +1541,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon12 = QIcon()
-        icon12.addFile(u"assets/icons/calendar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon12.addFile(u"assets/icons/calendar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.calendarBtn.setIcon(icon12)
         self.calendarBtn.setIconSize(QSize(40, 40))
 
@@ -1566,7 +1573,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon13 = QIcon()
-        icon13.addFile(u"assets/icons/update.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon13.addFile(u"assets/icons/update.png", QSize(), QIcon.Normal, QIcon.Off)
         self.fotaBtn.setIcon(icon13)
         self.fotaBtn.setIconSize(QSize(40, 40))
 
@@ -1598,7 +1605,7 @@ class Ui_Widget(object):
 "}\n"
 "")
         icon14 = QIcon()
-        icon14.addFile(u"assets/icons/Apple_Settings-512.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon14.addFile(u"assets/icons/Apple_Settings-512.png", QSize(), QIcon.Normal, QIcon.Off)
         self.settings_Btn.setIcon(icon14)
         self.settings_Btn.setIconSize(QSize(40, 40))
 
@@ -1615,6 +1622,9 @@ class Ui_Widget(object):
 
 
         self.retranslateUi(Widget)
+
+        self.stackedWidget.setCurrentIndex(2)
+
 
         QMetaObject.connectSlotsByName(Widget)
     # setupUi
@@ -1634,14 +1644,11 @@ class Ui_Widget(object):
         self.RB.setText(QCoreApplication.translate("Widget", u"RB", None))
         self.power.setText("")
         self.textEdit.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:18px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#ffffff;\">Notification Alert !!</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#ffffff;\"><br />Ambulance coming on the right clear the way</span></p></body></html>", None))
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:18px; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:696; color:#ffffff;\">Notification Alert !!</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:696; color:#ffffff;\"><br />Ambulance coming on the right clear the way</span></p></body></html>", None))
         self.P.setText(QCoreApplication.translate("Widget", u"P", None))
         self.R.setText(QCoreApplication.translate("Widget", u"R", None))
         self.N.setText(QCoreApplication.translate("Widget", u"N", None))
@@ -1652,58 +1659,45 @@ class Ui_Widget(object):
         self.wiper.setText("")
         self.LF_2.setText(QCoreApplication.translate("Widget", u"Self Parking", None))
         self.textEdit_3.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:16px; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400;\">Drowsiness Detected !!!</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:400;\">Calling Emergency services after 5 seconds</span></p></body></html>", None))
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:16px; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:11pt; font-weight:400;\">Drowsiness Detected !!!</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:11pt; font-weight:400;\">Calling Emergency services after 5 seconds</span></p></body></html>", None))
         self.LF_3.setText(QCoreApplication.translate("Widget", u"I'm Fine", None))
         self.textEdit_4.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:18px; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Caution: A vehicle is approaching from your left. </span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-si"
-                        "ze:10pt;\">Distance: 20 meters<br />Speed: 60 MPH<br />Direction: Left Side</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Auto Dismiss in 5 seconds</span></p></body></html>", None))
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:18px; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:696;\">Caution: A vehicle is approaching from your left. </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-weight:696;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:696;\">Distance: 20 meters<br />"
+                        "Speed: 60 MPH<br />Direction: Left Side</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:10pt; font-weight:696;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:696;\">Auto Dismiss in 5 seconds</span></p></body></html>", None))
         self.LF_4.setText(QCoreApplication.translate("Widget", u"Call Emergency Contact", None))
         self.label.setText(QCoreApplication.translate("Widget", u"Infotainment Software", None))
         self.label_2.setText(QCoreApplication.translate("Widget", u"Current Software Version: \"v1.0.0\"", None))
         self.check_updates_btn.setText(QCoreApplication.translate("Widget", u"Check For Updates", None))
         self.release_notes_text.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:14px; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18px;\">Update Information</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:18px;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
-                        ";\"><br /></p></body></html>", None))
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:18px; font-weight:696;\">Update Information</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:18px; font-weight:696;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-weight:696;\"><br /></p></body></html>", None))
         self.update_now_btn.setText(QCoreApplication.translate("Widget", u"Update Now", None))
         self.status_text.setHtml(QCoreApplication.translate("Widget", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:14px; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt;\">Update Status</span></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span sty"
-                        "le=\" font-size:11pt;\">- Last update: 20/02/2025</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt;\">- Check for updates every two weeks to be updated</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;\"><br /></p></body></html>", None))
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:11pt; font-weight:696;\">Update Status</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:11pt; font-weight:696;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:11pt; font-weight:696;\">- Last updat"
+                        "e: 20/02/2025</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:11pt; font-weight:696;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:11pt; font-weight:696;\">- Check for updates every two weeks to be updated</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:11pt; font-weight:696;\"><br /></p></body></html>", None))
         self.homeBtn.setText("")
         self.wifiBtn.setText("")
         self.musicBtn.setText("")
