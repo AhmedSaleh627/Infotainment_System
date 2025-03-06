@@ -1,0 +1,11 @@
+{
+    "files": [
+        "widget.py",
+        "form.ui",
+        "calendar.qml",
+        "drawing_widget.py",
+        "main.py",
+        "update_checker.py",
+        "DMS.py"
+    ]
+}
