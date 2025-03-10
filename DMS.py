@@ -69,7 +69,7 @@ class DrowsinessDetector(QThread):
             # Check detection results
             for result in results:
                 for box in result.boxes:
-                    if box.cls == 1 and box.conf >= 0.3:  # Assuming '1' is the drowsiness class
+                    if box.cls == 1 and box.conf >= 0.7:  # '1' is the drowsiness class
                         drowsy_detected = True
                         print("Drowsiness detected in frame!")
                         break

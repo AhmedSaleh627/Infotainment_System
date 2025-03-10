@@ -4,6 +4,7 @@ import folium
 import platform
 import subprocess
 import numpy as np
+import json  # Add this import at the top
 
 from PySide6.QtWidgets import QApplication, QWidget, QLabel, QSizePolicy, QGraphicsPixmapItem, QGraphicsScene, QVBoxLayout, QTextEdit, QMessageBox
 from PySide6.QtWebEngineWidgets import QWebEngineView
@@ -16,6 +17,7 @@ from DMS import DrowsinessDetector
 
 from ui_form import Ui_Widget
 
+from navigation_simulator import NavigationSimulator
 
 
 
@@ -40,9 +42,9 @@ class Widget(QWidget):
         self.detector = DrowsinessDetector(
                     "assets/AI_Models/best.pt",
                     31.248818720920042, 29.969674052607445,
-                    "xxx",
-                    "xx",
-                    "xx", "xx"
+                    "xxxx",
+                    "xxxx",
+                    "+201207955600", "+14159917415"
                 )
         self.detector.log_update.connect(self.update_log)
         self.detector.drowsiness_detected.connect(self.on_drowsiness_detected)
@@ -52,12 +54,24 @@ class Widget(QWidget):
         self.detector.start()
 
         self.web_view = None
+
+
+
         self.map_initialized = False
+
+        # 31.254432625016356, 29.990215430955605
+
+        # Start and destination coordinates
+        start_lat, start_lon = 31.25715824560256, 29.980877224491945  # Home
+        end_lat, end_lon = 31.254432625016356, 29.990215430955605 # Work
+
+        # Create the simulator with route-based navigation
+        self.simulator = NavigationSimulator(start_lat, start_lon, end_lat, end_lon)
+        self.simulator.location_updated.connect(self.update_marker)  # Connect to update function
+
+
         self.is_locked = True
-        self.open_rf = False
-        self.open_lf = False
-        self.open_rb = False
-        self.open_lb = False
+
         self.is_seatbelt = True
         self.is_powered=False
         self.ui.power.clicked.connect(self.toggle_power)
@@ -239,86 +253,6 @@ class Widget(QWidget):
             self.ui.power.setIcon(QIcon('assets/icons/car_shut.png'))
 
 
-    @staticmethod
-    def colorize_icon(icon_path, color):
-        pixmap = QPixmap(icon_path)
-        colored_pixmap = QPixmap(pixmap.size())
-        colored_pixmap.fill(Qt.transparent)
-
-        painter = QPainter(colored_pixmap)
-        painter.setCompositionMode(QPainter.CompositionMode_Source)
-        painter.drawPixmap(0, 0, pixmap)
-        painter.setCompositionMode(QPainter.CompositionMode_SourceIn)
-        painter.fillRect(colored_pixmap.rect(), color)
-        painter.end()
-
-        return QIcon(colored_pixmap)
-
-    def update_car_icon(self):
-        """
-        Updates the car icon based on which doors are open.
-        """
-        door_state = {
-            "RF": self.open_rf,
-            "LF": self.open_lf,
-            "RB": self.open_rb,
-            "LB": self.open_lb
-        }
-
-        # Mapping door combinations to the corresponding image file
-        door_combinations = {
-            (False, False, False, False): "all_closed.png",
-            (True, False, False, False): "rf_opened.png",
-            (False, True, False, False): "lf_opened.png",
-            (False, False, True, False): "rb_opened.png",
-            (False, False, False, True): "lb_opened.png",
-
-            (True, True, False, False): "lf_rf_opened.png",
-            (False, False, True, True): "lb_rb_opened.png",
-            (True, False, True, False): "rf_rb_opened.png",
-            (False, True, False, True): "lf_lb_opened.png",
-            (False, True, True, False): "lf_rb_opened.png",
-            (True, False, False, True): "rf_lb_opened.png",
-
-            (True, True, True, False): "lb_closed.png",
-            (True, False, True, True): "lf_closed.png",
-            (False, True, True, True): "rf_closed.png",
-            (True, True, False, True): "rb_closed.png",
-            (True, True, True, True): "all_opened.png"
-        }
-
-        # Get the corresponding image
-        current_state = (self.open_rf, self.open_lf, self.open_rb, self.open_lb)
-        icon_path = f'assets/icons/{door_combinations[current_state]}'
-
-        # Determine car color
-        car_color = QColor("#FF0000") if current_state == (False, False, False, False) else QColor("#00FF00")
-
-        # Update the icon with the appropriate color
-        self.ui.car.setIcon(self.colorize_icon(icon_path, car_color))
-        self.ui.car.setIconSize(QSize(130, 130))
-
-
-    def toggle_RF(self):
-        self.open_rf = not self.open_rf
-
-        self.update_car_icon()
-
-    def toggle_LF(self):
-        self.open_lf = not self.open_lf
-
-        self.update_car_icon()
-
-    def toggle_RB(self):
-        self.open_rb = not self.open_rb
-
-        self.update_car_icon()
-
-    def toggle_LB(self):
-        self.open_lb = not self.open_lb
-
-        self.update_car_icon()
-
 
     def toggle_seatbelt(self):
         self.is_seatbelt = not self.is_seatbelt
@@ -346,18 +280,137 @@ class Widget(QWidget):
 
     def show_map_page(self):
         if not self.map_initialized:
-            folium_map = folium.Map(location=[31.257196646654524, 29.98070623246377], zoom_start=30)
-            folium.Marker(
-                location=[31.257196646654524, 29.98070623246377],
-                popup='My Location',
-                icon=folium.Icon(color='blue', icon='info-sign')
-            ).add_to(folium_map)
-            map_html = folium_map._repr_html_()
+            # Convert Python route coordinates to a JavaScript-friendly format
+            route_coords_json = json.dumps(self.simulator.route_coords)  # Convert list of tuples to JSON string
+
+            # Example vehicle positions (replace with real values)
+            #31.249831568513677, 29.982195755594645
+            vehicle_positions = [
+                (31.258319955764655,  29.989407850868474),  # Vehicle 1
+                (31.25860276010398, 29.98354532964045),  # Vehicle 2
+                (31.249831568513677, 29.982195755594645)   # Vehicle 3
+            ]
+            vehicle_coords_json = json.dumps(vehicle_positions)  # Convert to JSON format
+
+            # Create an HTML page with Leaflet.js
+            map_html = f"""
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Live Map</title>
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            </head>
+            <body>
+                <div id="map" style="width: 100%; height: 100vh;"></div>
+                <script>
+                    var map = L.map('map').setView([{self.simulator.lat}, {self.simulator.lon}], 15);
+                    L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+                        attribution: '&copy; OpenStreetMap contributors'
+                    }}).addTo(map);
+
+                    // Define car icon (for all vehicles)
+                    var carIcon = L.icon({{
+                        iconUrl: 'https://cdn-icons-png.flaticon.com/64/744/744465.png',
+                        iconSize: [40, 40],
+                        iconAnchor: [20, 20],
+                        popupAnchor: [0, -20]
+                    }});
+
+                    // Add main vehicle marker
+                    var marker = L.marker([{self.simulator.lat}, {self.simulator.lon}], {{ icon: carIcon }}).addTo(map);
+
+                    // Parse route coordinates and draw polyline
+                    var routeCoords = {route_coords_json};
+                    if (routeCoords.length > 0) {{
+                        var polyline = L.polyline(routeCoords, {{ color: 'blue', weight: 4 }}).addTo(map);
+                        map.fitBounds(polyline.getBounds());
+                    }}
+
+                    // Parse vehicle coordinates and add markers (all using car icon)
+                    var vehicleCoords = {vehicle_coords_json};
+                    vehicleCoords.forEach((coords, index) => {{
+                        L.marker([coords[0], coords[1]], {{ icon: carIcon }})
+                            .addTo(map)
+                            .bindPopup("Vehicle " + (index + 1));
+                    }});
+
+                    // Function to update main marker position
+                    function updateMarkerPosition(lat, lon) {{
+                        marker.setLatLng([lat, lon]);
+                        map.setView([lat, lon]);
+                    }}
+
+                    window.map = map;
+                    window.marker = marker;
+                    window.updateMarkerPosition = updateMarkerPosition;
+                </script>
+            </body>
+            </html>
+            """
+
+            # Load the HTML into QWebEngineView
             self.web_view = QWebEngineView(self)
             self.web_view.setHtml(map_html)
             self.web_view.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
             self.web_view.setGeometry(self.ui.mapPage.rect())
             self.ui.mapPage.layout().addWidget(self.web_view)
+
+            self.simulator.start_simulation()
             self.map_initialized = True
+
         self.ui.stackedWidget.setCurrentIndex(2)
+
+
+    def inject_javascript(self):
+        """Ensure the `map` and `marker` variables are globally accessible."""
+        js_code = """
+            setTimeout(function() {
+                if (typeof L !== 'undefined') {
+                    window.map = map;  // Expose `map` globally
+                    window.marker = L.marker([%f, %f]).addTo(map);
+                } else {
+                    console.error("Leaflet (L) or map is not defined yet.");
+                }
+            }, 1000);
+        """ % (self.simulator.lat, self.simulator.lon)
+
+        self.web_view.page().runJavaScript(js_code)
+
+
+    def update_marker(self, new_lat, new_lon):
+        """Move the marker dynamically without resetting zoom or user interactions."""
+        if hasattr(self, "web_view") and self.web_view is not None:
+            js_code = f"""
+            if (typeof window.marker !== 'undefined' && typeof window.map !== 'undefined') {{
+                let currentZoom = window.map.getZoom();  // Store zoom level
+                let currentCenter = window.map.getCenter();  // Store center
+                window.marker.setLatLng([{new_lat}, {new_lon}]);  // Move marker
+                window.map.setView(currentCenter, currentZoom);  // Keep same zoom & center
+            }} else {{
+                console.error("Marker or map is not defined yet.");
+            }}
+            """
+
+            self.web_view.page().runJavaScript(js_code)
+
+
+    def update_map(self):
+        """Move the marker dynamically without resetting zoom or center."""
+        if hasattr(self, "web_view") and self.web_view is not None:
+            js_code = f"""
+            if (typeof window.marker !== 'undefined' && typeof window.map !== 'undefined') {{
+                let currentZoom = window.map.getZoom();
+                let currentCenter = window.map.getCenter();
+                window.marker.setLatLng([{self.simulator.lat}, {self.simulator.lon}]);
+                window.map.setView(currentCenter, currentZoom);  // Keep zoom & center
+            }} else {{
+                console.error("Marker or map is not defined yet.");
+            }}
+            """
+
+            self.web_view.page().runJavaScript(js_code)
+
 
