@@ -1,7 +1,7 @@
 import openrouteservice
 from PySide6.QtCore import QTimer, QObject, Signal
 
-API_KEY = "xxxx"
+API_KEY = "5b3ce3597851110001cf624803ee18469b4e46b1a3545b41bbf1b894"
 client = openrouteservice.Client(key=API_KEY)
 
 class NavigationSimulator(QObject):

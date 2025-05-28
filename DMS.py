@@ -11,8 +11,10 @@ class DrowsinessDetector(QThread):
     frame_ready = Signal(QImage)  # Emit a QImage for the QLabel
     log_update = Signal(str)  # Emits log updates for QTextEdit
     def __init__(self, model_path, lat, lon, account_sid, auth_token, to_number, from_number, parent=None):
+
         super().__init__(parent)
-        self.model = YOLO(model_path)
+        device = "cuda"
+        self.model = YOLO(model_path).to(device)
         self.LATITUDE = lat
         self.LONGITUDE = lon
         self.account_sid = account_sid
@@ -49,10 +51,12 @@ class DrowsinessDetector(QThread):
 
     def run(self):
         """Main loop to detect drowsiness and send frames."""
+        url = "http://192.168.1.4:4747/video"
+        video_url=r"C:\Users\Ahmed saleh\Videos\2025-05-20 11-45-08.mp4"
         self.cap = cv2.VideoCapture(0)
         if not self.cap.isOpened():
             print("Error: Could not open webcam.")
-            self.log_update.emit("Error: Could not open webcam.")
+            #self.log_update.emit("Error: Could not open webcam.")
             return
 
         self.running = True
@@ -69,7 +73,7 @@ class DrowsinessDetector(QThread):
             # Check detection results
             for result in results:
                 for box in result.boxes:
-                    if box.cls == 1 and box.conf >= 0.7:  # '1' is the drowsiness class
+                    if box.cls == 1 and box.conf >= 0.77:  # '1' is the drowsiness class
                         drowsy_detected = True
                         print("Drowsiness detected in frame!")
                         break

@@ -29,16 +29,11 @@ class Widget(QWidget):
 
 
     def initialize_system(self):
-
-
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
-
         self.update_checker = UpdateChecker()
         self.ui.check_updates_btn.clicked.connect(self.check_for_updates)
         self.ui.update_now_btn.clicked.connect(self.update_now)
-
-
         self.detector = DrowsinessDetector(
                     "assets/AI_Models/best.pt",
                     31.248818720920042, 29.969674052607445,
@@ -52,26 +47,16 @@ class Widget(QWidget):
         self.ui.dms_Updates.append("Starting Drowsiness Detection...")
         self.detector.frame_ready.connect(self.update_camera_feed)
         self.detector.start()
-
         self.web_view = None
-
-
-
         self.map_initialized = False
-
         # 31.254432625016356, 29.990215430955605
-
         # Start and destination coordinates
         start_lat, start_lon = 31.25715824560256, 29.980877224491945  # Home
         end_lat, end_lon = 31.254432625016356, 29.990215430955605 # Work
-
         # Create the simulator with route-based navigation
         self.simulator = NavigationSimulator(start_lat, start_lon, end_lat, end_lon)
         self.simulator.location_updated.connect(self.update_marker)  # Connect to update function
-
-
         self.is_locked = True
-
         self.is_seatbelt = True
         self.is_powered=False
         self.ui.power.clicked.connect(self.toggle_power)
@@ -83,22 +68,24 @@ class Widget(QWidget):
         self.ui.lockBtn.clicked.connect(self.toggle_lock)
         self.ui.seatbeltBtn.clicked.connect(self.toggle_seatbelt)
         self.ui.refreshButton.clicked.connect(self.scan_wifi)
-
         self.scan_wifi()
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_date_time)
         self.timer.start(1000)
         self.update_date_time()
-
         self.ui.progressBar.setValue(0)
         self.progress_value = 0
         self.progress_timer = QTimer(self)
         self.progress_timer.timeout.connect(self.simulate_progress)
         self.progress_timer.start(100)
         self.update_progress_style(self.progress_value)
-
         # Store the reference to the DrawingWidget here, so it persists between page transitions
         self.current_drawing_widget = None
+
+
+
+
+
     def update_log(self, message):
         """Update the log display with new messages."""
         self.ui.dms_Updates.append(message)

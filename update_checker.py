@@ -8,7 +8,7 @@ class UpdateChecker:
 
     def check_updates(self):
         # Simulate checking for updates
-        self.update_available = False
+        self.update_available = True
         return self.update_available
 
     def get_update_status(self):
