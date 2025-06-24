@@ -24,7 +24,7 @@ class Ui_Widget(object):
     def setupUi(self, Widget):
         if not Widget.objectName():
             Widget.setObjectName(u"Widget")
-        Widget.resize(1143, 676)
+        Widget.resize(1400, 801)
         Widget.setStyleSheet(u"#Widget{\n"
 "background-color: #1f232a;\n"
 "}")
@@ -67,7 +67,7 @@ class Ui_Widget(object):
         self.wifiPage.setObjectName(u"wifiPage")
         self.wifiLabel = QLabel(self.wifiPage)
         self.wifiLabel.setObjectName(u"wifiLabel")
-        self.wifiLabel.setGeometry(QRect(150, 10, 851, 61))
+        self.wifiLabel.setGeometry(QRect(290, 10, 991, 61))
         self.wifiLabel.setStyleSheet(u"QLabel {\n"
 "    background-color: #2b2b2b;\n"
 "    color: #ffffff;\n"
@@ -82,7 +82,7 @@ class Ui_Widget(object):
 "")
         self.wifiListWidget = QListWidget(self.wifiPage)
         self.wifiListWidget.setObjectName(u"wifiListWidget")
-        self.wifiListWidget.setGeometry(QRect(150, 70, 851, 511))
+        self.wifiListWidget.setGeometry(QRect(290, 70, 991, 591))
         self.wifiListWidget.setStyleSheet(u"QListWidget {\n"
 "    background-color: #2b2b2b;\n"
 "    border: 2px solid #555;\n"
@@ -106,7 +106,7 @@ class Ui_Widget(object):
 "")
         self.refreshButton = QPushButton(self.wifiPage)
         self.refreshButton.setObjectName(u"refreshButton")
-        self.refreshButton.setGeometry(QRect(150, 540, 181, 41))
+        self.refreshButton.setGeometry(QRect(290, 620, 181, 41))
         self.refreshButton.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
 "    border: 2px solid transparent;  \n"
@@ -142,7 +142,7 @@ class Ui_Widget(object):
 "")
         self.connectButton = QPushButton(self.wifiPage)
         self.connectButton.setObjectName(u"connectButton")
-        self.connectButton.setGeometry(QRect(820, 540, 181, 41))
+        self.connectButton.setGeometry(QRect(1100, 620, 181, 41))
         self.connectButton.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
 "    border: 2px solid transparent;  \n"
@@ -182,7 +182,7 @@ class Ui_Widget(object):
         self.homePage.setStyleSheet(u"")
         self.dateTimeLabel = QLabel(self.homePage)
         self.dateTimeLabel.setObjectName(u"dateTimeLabel")
-        self.dateTimeLabel.setGeometry(QRect(420, -40, 351, 141))
+        self.dateTimeLabel.setGeometry(QRect(580, -10, 351, 141))
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(11)
         sizePolicy1.setVerticalStretch(11)
@@ -197,7 +197,7 @@ class Ui_Widget(object):
         self.dateTimeLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.lockBtn = QPushButton(self.homePage)
         self.lockBtn.setObjectName(u"lockBtn")
-        self.lockBtn.setGeometry(QRect(1050, 10, 48, 44))
+        self.lockBtn.setGeometry(QRect(1280, 50, 48, 44))
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
@@ -234,7 +234,7 @@ class Ui_Widget(object):
         self.lockBtn.setIconSize(QSize(30, 30))
         self.seatbeltBtn = QPushButton(self.homePage)
         self.seatbeltBtn.setObjectName(u"seatbeltBtn")
-        self.seatbeltBtn.setGeometry(QRect(1000, 10, 48, 44))
+        self.seatbeltBtn.setGeometry(QRect(1230, 50, 48, 44))
         self.seatbeltBtn.setStyleSheet(u"QPushButton {\n"
 "    background-color: transparent;  /* Transparent background by default */\n"
 "    border: 2px solid transparent;  /* Transparent border to maintain layout */\n"
@@ -266,19 +266,19 @@ class Ui_Widget(object):
         self.seatbeltBtn.setIconSize(QSize(30, 30))
         self.progressBar = QProgressBar(self.homePage)
         self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setGeometry(QRect(900, 70, 211, 31))
+        self.progressBar.setGeometry(QRect(1030, 150, 321, 31))
         self.progressBar.setStyleSheet(u"")
         self.progressBar.setValue(24)
         self.horizontalWidget = QWidget(self.homePage)
         self.horizontalWidget.setObjectName(u"horizontalWidget")
-        self.horizontalWidget.setGeometry(QRect(390, 90, 411, 301))
+        self.horizontalWidget.setGeometry(QRect(530, 190, 411, 301))
         self.horizontalWidget.setStyleSheet(u"background: transparent")
         self.homePageLayout = QHBoxLayout(self.horizontalWidget)
         self.homePageLayout.setSpacing(0)
         self.homePageLayout.setObjectName(u"homePageLayout")
         self.power = QPushButton(self.homePage)
         self.power.setObjectName(u"power")
-        self.power.setGeometry(QRect(20, 510, 61, 51))
+        self.power.setGeometry(QRect(20, 640, 61, 51))
         self.power.setStyleSheet(u"QPushButton {\n"
 "    background-color: transparent;  /* Transparent background by default */\n"
 "    border: none;                   /* Remove border for a cleaner icon-only look */\n"
@@ -309,7 +309,7 @@ class Ui_Widget(object):
         self.power.setIconSize(QSize(50, 50))
         self.textEdit = QTextEdit(self.homePage)
         self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(10, 80, 351, 131))
+        self.textEdit.setGeometry(QRect(30, 80, 441, 201))
         self.textEdit.setStyleSheet(u"QTextEdit {\n"
 "    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
 "    border: none;  /* Remove border */\n"
@@ -322,7 +322,7 @@ class Ui_Widget(object):
 "")
         self.LF_2 = QPushButton(self.homePage)
         self.LF_2.setObjectName(u"LF_2")
-        self.LF_2.setGeometry(QRect(830, 160, 281, 51))
+        self.LF_2.setGeometry(QRect(1030, 210, 331, 51))
         self.LF_2.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
 "    border: 2px solid transparent;  \n"
@@ -359,7 +359,7 @@ class Ui_Widget(object):
         self.LF_2.setIconSize(QSize(20, 20))
         self.dms_Updates = QTextEdit(self.homePage)
         self.dms_Updates.setObjectName(u"dms_Updates")
-        self.dms_Updates.setGeometry(QRect(380, 420, 421, 101))
+        self.dms_Updates.setGeometry(QRect(530, 550, 421, 101))
         self.dms_Updates.setStyleSheet(u"QTextEdit {\n"
 "    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
 "    border: none;  /* Remove border */\n"
@@ -372,7 +372,7 @@ class Ui_Widget(object):
 "")
         self.textEdit_4 = QTextEdit(self.homePage)
         self.textEdit_4.setObjectName(u"textEdit_4")
-        self.textEdit_4.setGeometry(QRect(10, 260, 351, 211))
+        self.textEdit_4.setGeometry(QRect(30, 320, 471, 281))
         self.textEdit_4.setStyleSheet(u"QTextEdit {\n"
 "    background-color: rgba(0, 0, 0, 150);  /* Semi-transparent black */\n"
 "    border: none;  /* Remove border */\n"
@@ -385,7 +385,7 @@ class Ui_Widget(object):
 "")
         self.LF_4 = QPushButton(self.homePage)
         self.LF_4.setObjectName(u"LF_4")
-        self.LF_4.setGeometry(QRect(490, 530, 201, 41))
+        self.LF_4.setGeometry(QRect(640, 650, 201, 41))
         self.LF_4.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
 "    border: 2px solid transparent;  \n"
@@ -422,7 +422,7 @@ class Ui_Widget(object):
         self.LF_4.setIconSize(QSize(20, 20))
         self.dms_CameraFeed = QLabel(self.homePage)
         self.dms_CameraFeed.setObjectName(u"dms_CameraFeed")
-        self.dms_CameraFeed.setGeometry(QRect(830, 240, 281, 311))
+        self.dms_CameraFeed.setGeometry(QRect(1030, 280, 341, 371))
         self.dms_CameraFeed.setStyleSheet(u"QLabel {\n"
 "        border: 2px solid #00FF00;  /* Subtle green border matching other UI elements */\n"
 "        border-radius: 10px; /* Smooth edges */\n"
@@ -622,7 +622,7 @@ class Ui_Widget(object):
 "")
         self.check_updates_btn = QPushButton(self.fotaPage)
         self.check_updates_btn.setObjectName(u"check_updates_btn")
-        self.check_updates_btn.setGeometry(QRect(40, 490, 281, 61))
+        self.check_updates_btn.setGeometry(QRect(110, 600, 281, 61))
         self.check_updates_btn.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
 "    border: 2px solid transparent;  \n"
@@ -658,7 +658,7 @@ class Ui_Widget(object):
 "")
         self.release_notes_text = QTextEdit(self.fotaPage)
         self.release_notes_text.setObjectName(u"release_notes_text")
-        self.release_notes_text.setGeometry(QRect(570, 70, 471, 251))
+        self.release_notes_text.setGeometry(QRect(680, 70, 691, 501))
         self.release_notes_text.setStyleSheet(u"\n"
 "    QTextEdit {\n"
 "        background-color: #1a1a1a;  /* Darker background for better contrast */\n"
@@ -677,7 +677,7 @@ class Ui_Widget(object):
 "")
         self.update_now_btn = QPushButton(self.fotaPage)
         self.update_now_btn.setObjectName(u"update_now_btn")
-        self.update_now_btn.setGeometry(QRect(820, 490, 281, 61))
+        self.update_now_btn.setGeometry(QRect(1000, 620, 281, 61))
         self.update_now_btn.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background */\n"
 "    border: 2px solid transparent;  \n"
@@ -713,7 +713,7 @@ class Ui_Widget(object):
 "")
         self.status_text = QTextEdit(self.fotaPage)
         self.status_text.setObjectName(u"status_text")
-        self.status_text.setGeometry(QRect(20, 220, 361, 181))
+        self.status_text.setGeometry(QRect(20, 220, 571, 351))
         self.status_text.setStyleSheet(u"\n"
 "    QTextEdit {\n"
 "        background-color: #1a1a1a;  /* Darker background for better contrast */\n"

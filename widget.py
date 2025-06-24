@@ -17,8 +17,9 @@ from DMS import DrowsinessDetector
 
 from ui_form import Ui_Widget
 
-from navigation_simulator import NavigationSimulator
+#from navigation_simulator import NavigationSimulator
 
+from GPSSimulator import GPSSimulator
 
 
 class Widget(QWidget):
@@ -51,11 +52,17 @@ class Widget(QWidget):
         self.map_initialized = False
         # 31.254432625016356, 29.990215430955605
         # Start and destination coordinates
-        start_lat, start_lon = 31.25715824560256, 29.980877224491945  # Home
-        end_lat, end_lon = 31.254432625016356, 29.990215430955605 # Work
+        #start_lat, start_lon = 31.25715824560256, 29.980877224491945  # Home
+        #end_lat, end_lon = 31.254432625016356, 29.990215430955605 # Work
         # Create the simulator with route-based navigation
-        self.simulator = NavigationSimulator(start_lat, start_lon, end_lat, end_lon)
-        self.simulator.location_updated.connect(self.update_marker)  # Connect to update function
+        #self.simulator = NavigationSimulator(start_lat, start_lon, end_lat, end_lon)
+        #self.simulator.location_updated.connect(self.update_marker)  # Connect to update function
+
+        # Example in your main window (instead of NavigationSimulator)
+        self.simulator = GPSSimulator("D:\ECE_Engineering\Graduation Project\gps_data.json", update_interval=3000)
+        self.simulator.location_updated.connect(self.update_marker)
+
+
         self.is_locked = True
         self.is_seatbelt = True
         self.is_powered=False
@@ -267,19 +274,23 @@ class Widget(QWidget):
 
     def show_map_page(self):
         if not self.map_initialized:
-            # Convert Python route coordinates to a JavaScript-friendly format
-            route_coords_json = json.dumps(self.simulator.route_coords)  # Convert list of tuples to JSON string
+            # Convert GPS log to route coordinates (lat, lon)
+            route_coords = [(p['latitude'], p['longitude']) for p in self.simulator.gps_data]
+            route_coords_json = json.dumps(route_coords)
 
-            # Example vehicle positions (replace with real values)
-            #31.249831568513677, 29.982195755594645
+            # Sample static vehicle markers
             vehicle_positions = [
-                (31.258319955764655,  29.989407850868474),  # Vehicle 1
-                (31.25860276010398, 29.98354532964045),  # Vehicle 2
+                (31.258319955764655, 29.989407850868474),  # Vehicle 1
+                (31.25860276010398, 29.98354532964045),    # Vehicle 2
                 (31.249831568513677, 29.982195755594645)   # Vehicle 3
             ]
-            vehicle_coords_json = json.dumps(vehicle_positions)  # Convert to JSON format
+            vehicle_coords_json = json.dumps(vehicle_positions)
 
-            # Create an HTML page with Leaflet.js
+            # Get starting point for map view
+            first_lat = self.simulator.gps_data[0]["latitude"]
+            first_lon = self.simulator.gps_data[0]["longitude"]
+
+            # Create map HTML with Leaflet.js
             map_html = f"""
             <!DOCTYPE html>
             <html>
@@ -293,12 +304,12 @@ class Widget(QWidget):
             <body>
                 <div id="map" style="width: 100%; height: 100vh;"></div>
                 <script>
-                    var map = L.map('map').setView([{self.simulator.lat}, {self.simulator.lon}], 15);
+                    var map = L.map('map').setView([{first_lat}, {first_lon}], 15);
+
                     L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
                         attribution: '&copy; OpenStreetMap contributors'
                     }}).addTo(map);
 
-                    // Define car icon (for all vehicles)
                     var carIcon = L.icon({{
                         iconUrl: 'https://cdn-icons-png.flaticon.com/64/744/744465.png',
                         iconSize: [40, 40],
@@ -306,17 +317,14 @@ class Widget(QWidget):
                         popupAnchor: [0, -20]
                     }});
 
-                    // Add main vehicle marker
-                    var marker = L.marker([{self.simulator.lat}, {self.simulator.lon}], {{ icon: carIcon }}).addTo(map);
+                    var marker = L.marker([{first_lat}, {first_lon}], {{ icon: carIcon }}).addTo(map);
 
-                    // Parse route coordinates and draw polyline
                     var routeCoords = {route_coords_json};
                     if (routeCoords.length > 0) {{
                         var polyline = L.polyline(routeCoords, {{ color: 'blue', weight: 4 }}).addTo(map);
                         map.fitBounds(polyline.getBounds());
                     }}
 
-                    // Parse vehicle coordinates and add markers (all using car icon)
                     var vehicleCoords = {vehicle_coords_json};
                     vehicleCoords.forEach((coords, index) => {{
                         L.marker([coords[0], coords[1]], {{ icon: carIcon }})
@@ -324,15 +332,11 @@ class Widget(QWidget):
                             .bindPopup("Vehicle " + (index + 1));
                     }});
 
-                    // Function to update main marker position
-                    function updateMarkerPosition(lat, lon) {{
+                    // Define updateMarkerPosition globally
+                    window.updateMarkerPosition = function(lat, lon) {{
                         marker.setLatLng([lat, lon]);
                         map.setView([lat, lon]);
-                    }}
-
-                    window.map = map;
-                    window.marker = marker;
-                    window.updateMarkerPosition = updateMarkerPosition;
+                    }};
                 </script>
             </body>
             </html>
@@ -345,6 +349,7 @@ class Widget(QWidget):
             self.web_view.setGeometry(self.ui.mapPage.rect())
             self.ui.mapPage.layout().addWidget(self.web_view)
 
+            # Start simulation
             self.simulator.start_simulation()
             self.map_initialized = True
 
@@ -367,20 +372,9 @@ class Widget(QWidget):
         self.web_view.page().runJavaScript(js_code)
 
 
-    def update_marker(self, new_lat, new_lon):
-        """Move the marker dynamically without resetting zoom or user interactions."""
-        if hasattr(self, "web_view") and self.web_view is not None:
-            js_code = f"""
-            if (typeof window.marker !== 'undefined' && typeof window.map !== 'undefined') {{
-                let currentZoom = window.map.getZoom();  // Store zoom level
-                let currentCenter = window.map.getCenter();  // Store center
-                window.marker.setLatLng([{new_lat}, {new_lon}]);  // Move marker
-                window.map.setView(currentCenter, currentZoom);  // Keep same zoom & center
-            }} else {{
-                console.error("Marker or map is not defined yet.");
-            }}
-            """
-
+    def update_marker(self, lat, lon):
+        if self.web_view:
+            js_code = f"updateMarkerPosition({lat}, {lon});"
             self.web_view.page().runJavaScript(js_code)
 
 

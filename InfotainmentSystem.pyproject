@@ -7,6 +7,7 @@
         "main.py",
         "update_checker.py",
         "DMS.py",
-        "navigation_simulator.py"
+        "navigation_simulator.py",
+        "GPSSimulator.py"
     ]
 }
