@@ -14,19 +14,28 @@ This infotainment system is designed for smart vehicles, integrating V2X communi
 - **Settings Page**: Customizable user preferences and system configurations.
 - **Software Updates Page**: Provides updates for system enhancements and bug fixes.
 ### Home Page
-![{70458762-4835-4C00-910A-FD70D5B8E3BD}](https://github.com/user-attachments/assets/55769358-c12a-491f-823a-733b4a03edf8)
+![drowsy_3](https://github.com/user-attachments/assets/c6273f75-00dc-402c-a6e2-dac3801f9fbe)
 
 ### WiFi Page
 ![{9594D14E-37FC-49E6-9C46-0809208CE814}](https://github.com/user-attachments/assets/99901ecb-18b8-4ab4-8ded-2550b2617e52)
 
 ### Map Page
-![{3D329B47-E29B-4400-9A83-5FD1A6E6B9CA}](https://github.com/user-attachments/assets/4edf6b45-f673-4f9a-9fa1-dc6c88d36552)
+![WhatsApp Image 2025-06-24 at 05 51 44_f1369829](https://github.com/user-attachments/assets/73a60a24-c0e5-4e82-b29c-9b288aac0d26)
+
+### Frimware Updates over the Air Page
+![fota_update_available](https://github.com/user-attachments/assets/023855db-f4a1-4947-8590-d915335defa1)
+
+### Bluetooth Page
+![WhatsApp Image 2025-06-24 at 18 12 21_4f97307b](https://github.com/user-attachments/assets/1625ba10-14b4-49a8-b88a-87ac272dc66e)
+
+### Songs Page
+![WhatsApp Image 2025-06-24 at 15 13 53_b972d20d](https://github.com/user-attachments/assets/ca8b7907-1b0c-46f0-a7b9-4c216a2ebd8d)
+
+### Media Page
+![WhatsApp Image 2025-06-24 at 15 24 49_8749c773](https://github.com/user-attachments/assets/522a923d-58fc-452c-9867-d1148bd66a22)
 
 ### Calendar Page
 ![{732A26EF-9B48-4CC3-927E-7F27EDA3B7FE}](https://github.com/user-attachments/assets/1216b5bf-b06a-46b3-8fbe-b6e99dcfd988)
-
-### Bluetooth Page
-![{F7A2BB6D-445A-47AC-8635-4285706F0F73}](https://github.com/user-attachments/assets/34ffb4bc-5bf2-4211-b75a-6d11d74f9a07)
 
 ## Implementation Details
 ### Technologies Used
